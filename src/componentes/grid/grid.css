@@ -157,7 +157,6 @@ top: 222px;
   animation: go-back6 5s infinite alternate;
 
 }
-
 @keyframes go-back6 {
   0% {
     transform: translateX(-50px);
