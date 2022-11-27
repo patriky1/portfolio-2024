@@ -1,4 +1,6 @@
 import Grid  from './componentes/grid/grid'
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 function App() {
