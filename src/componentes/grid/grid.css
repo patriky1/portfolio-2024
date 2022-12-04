@@ -14,6 +14,7 @@
   font-size: 30px;
   color: #ffffff;
 }
+
 .title1 {
   position: relative;
   top: 17px;
@@ -27,13 +28,24 @@
   position: absolute;
   width: 800px;
   height: 261px;
-  left: 45%;
+  left: 40%;
   top: 40%;
   font-weight: 700;
   font-size: 60px;
   line-height: 65px;
   color: #ffffff;
 }
+
+@media screen and (max-width: 680px) {
+  .titleprincipal { 
+    position: absolute;
+    left: 55px;
+    top: 20%;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  }
+
 .retangle1 {
   position: absolute;
   width: 658.71px;
@@ -55,6 +67,16 @@
   line-height: 65px;
   color: #ffffff;
 }
+@media screen and (max-width: 680px) {
+  .title2 { 
+    position: absolute;
+    left: -70%;
+    bottom: 80%;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  }
+
 .titlegreen {
   position: absolute;
   top: 30%;
@@ -81,7 +103,7 @@
 .contact {
   position: relative;
   bottom: 320px;
-  left: 67.5%;
+  left: 69.5%;
   font-weight: 400;
   font-size: 25px;
   line-height: 27px;
@@ -91,7 +113,7 @@
 .line1 {
   position: relative;
   bottom: 200px;
-  left: 21.3%;
+  left: 23%;
   width: 86px;
   height: 0px;
   border: 1px solid #ffffff;
@@ -106,7 +128,7 @@
   position: relative;
   bottom: 100px;
   float: right;
-  left: 26%;
+  left: 28%;
   
 
 }

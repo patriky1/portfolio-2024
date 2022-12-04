@@ -16,8 +16,8 @@ import projects from "../imagens/projects.png";
 export default function App() {
   return (
     <div>
-      <Carousel fade>
-        <Carousel.Item interval={null}>
+      <Carousel fade controls={false} interval={null}>
+        <Carousel.Item  >
           <div className="bg1">
             <h4 className="title">Patriky</h4>
             <h4 className="title1"> Brito</h4>
@@ -36,7 +36,7 @@ export default function App() {
             <p className="contact">Contato</p>
             <p className="line1"></p>
             <div className="icons">
-              <img className="email" src={img1} alt="email" />
+              <img className="email" src={img1} href="mailto:patrikybrito@gmail.com" alt="email" />
               <img className="linkedin" src={img2} alt="linkedin" />
               <img className="insta" src={img3} alt="instagram" />
               <img className="git" src={img4} alt="github" />
