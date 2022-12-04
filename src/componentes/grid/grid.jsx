@@ -110,6 +110,7 @@ export default function App() {
             ©2022{" "}
           </p>
           <Carousel.Caption>
+            <div className="positionright">
             <p className="contact">Contato</p>
             <p className="line1"></p>
             <div className="icons">
@@ -117,6 +118,7 @@ export default function App() {
               <img className="linkedin" src={img2} alt="linkedin" />
               <img className="insta" src={img3} alt="instagram" />
               <img className="git" src={img4} alt="github" />
+            </div>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -134,7 +136,6 @@ export default function App() {
             <img className="bar1" src={bar1} alt="bar1" />
             <h5 className="languages">
               {" "}
-              <br></br>
               <br></br>
               <br></br>Espanhol
             </h5>
