@@ -4,6 +4,17 @@
   height: 100vh;
   background: #0f1012;
 }
+@media screen and (max-width: 680px) {
+  .bg1 { 
+    position: relative;
+    width: 100%;
+    height: 94vh;
+    background: #0f1012;
+  }
+  }
+
+
+
 .title {
   position: relative;
   top: 50px;
@@ -42,7 +53,7 @@
     left: 55px;
     top: 20%;
     font-size: 30px;
-    line-height: 30px;
+    line-height: 35px;
   }
   }
 
@@ -56,6 +67,22 @@
   mix-blend-mode: overlay;
   transform: rotate(26.84deg);
 }
+
+@media screen and (max-width: 680px) {
+  .retangle1 { 
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 10%;
+    top: 20%;
+    background: #d9d9d9;
+    mix-blend-mode: overlay;
+    transform: rotate(26.84deg);
+  }
+  }
+
+
+
 .title2 {
   position: absolute;
   top: 30%;
@@ -71,9 +98,10 @@
   .title2 { 
     position: absolute;
     left: -70%;
-    bottom: 80%;
+    
     font-size: 30px;
     line-height: 30px;
+    top: -60%;
   }
   }
 
@@ -88,6 +116,19 @@
   font-size: 48px;
   line-height: 65px;
 }
+
+@media screen and (max-width: 680px) {
+  .titlegreen { 
+    position: absolute;
+    left: -70%;
+    
+    font-size: 30px;
+    line-height: 30px;
+    top: -40%;
+  }
+  }
+
+
 .info {
   color: #ffffff;
   text-align: left;
@@ -110,6 +151,19 @@
   color: #ffffff;
   transform: rotate(90deg);
 }
+
+@media screen and (max-width: 680px) {
+  .contact   { 
+    position: relative;
+    bottom: 200px;
+    left: 33%;
+    width: 86px;
+    height: 0px;
+    transform: rotate(90deg);
+    float: right;
+  }
+}
+
 .line1 {
   position: relative;
   bottom: 200px;
@@ -120,6 +174,19 @@
   transform: rotate(90deg);
   float: right;
 }
+
+@media screen and (max-width: 680px) {
+  .line1   { 
+    position: absolute;
+    bottom: 130%;
+    left: 98%;
+    width: 86px;
+    height: 0px;
+    transform: rotate(90deg);
+    float: right;
+  }
+}
+
 .icons {
   display: flex;
   flex-direction: column;
@@ -129,9 +196,23 @@
   bottom: 100px;
   float: right;
   left: 28%;
-  
-
 }
+
+
+@media screen and (max-width: 680px) {
+  .icons   { 
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 25px;
+    position: relative;
+    bottom: 60%;
+    float: right;
+    left: 45%;
+  }
+}
+
+
 
 .informacoes {
   position: absolute;
@@ -169,6 +250,21 @@
   line-height: 65px;
   color: #ffffff;
 }
+
+@media screen and (max-width: 680px) {
+  .sobre { 
+    position: absolute;
+    width: 800px;
+    height: 261px;
+    left: 18%;
+    top: 20%;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 65px;
+    color: #ffffff;
+  }
+  }
+
 .sobremim {
   position: absolute;
   width: 70%;
@@ -180,6 +276,19 @@
   text-align: justify;
   font-weight: 400;
 }
+
+@media screen and (max-width: 680px) {
+  .sobremim { 
+    position: absolute;
+    left: 18%;
+    top: 30%;
+    font-size: 14px;
+   
+  }
+  }
+
+
+
 .qrcode {
   position: absolute;
   left: 60%;
@@ -190,6 +299,16 @@
   width: 300px;
   height: 300px;
 }
+@media screen and (max-width: 680px) {
+  .qr { 
+    width: 300px;
+    height: 300px;
+   
+  }
+  }
+
+
+
 .imgbar {
   display: flex;
   flex-direction: row;
