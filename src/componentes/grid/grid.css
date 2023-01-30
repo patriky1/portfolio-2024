@@ -4,14 +4,15 @@
   height: 100vh;
   background: #0f1012;
 }
+
 @media screen and (max-width: 680px) {
-  .bg1 { 
+  .bg1 {
     position: relative;
     width: 100%;
     height: 94vh;
     background: #0f1012;
   }
-  }
+}
 
 
 
@@ -35,6 +36,7 @@
   font-size: 30px;
   color: #ffffff;
 }
+
 .titleprincipal {
   position: absolute;
   width: 800px;
@@ -48,14 +50,14 @@
 }
 
 @media screen and (max-width: 680px) {
-  .titleprincipal { 
+  .titleprincipal {
     position: absolute;
     left: 55px;
-    top: 20%;
+    top: 25%;
     font-size: 30px;
     line-height: 35px;
   }
-  }
+}
 
 .retangle1 {
   position: absolute;
@@ -69,7 +71,7 @@
 }
 
 @media screen and (max-width: 680px) {
-  .retangle1 { 
+  .retangle1 {
     position: absolute;
     width: 100%;
     height: 50%;
@@ -79,14 +81,14 @@
     mix-blend-mode: overlay;
     transform: rotate(26.84deg);
   }
-  }
+}
 
 
 
 .title2 {
   position: absolute;
-  top: 30%;
-  left: 10%;
+  bottom: 40%;
+  left: 20%;
   width: 606px;
   height: 65px;
   font-weight: 700;
@@ -94,21 +96,23 @@
   line-height: 65px;
   color: #ffffff;
 }
+
 @media screen and (max-width: 680px) {
-  .title2 { 
-    position: absolute;
-    left: -85%;
+  .title2 {
     
+    left: 90%;
+    float: right;
+    position: relative;
     font-size: 30px;
     line-height: 30px;
-    top: -40%;
+    bottom: 200px;
   }
-  }
+}
 
 .titlegreen {
-  position: absolute;
-  top: 30%;
-  left: 38%;
+  position: relative;
+  bottom:20%;
+  margin-left:180%;
   color: #6afaa3;
   width: 606px;
   height: 65px;
@@ -118,16 +122,21 @@
 }
 
 @media screen and (max-width: 680px) {
-  .titlegreen { 
-    position: absolute;
-    left: -20%;
-    
+  .titlegreen {
+    left: 160%;
+    bottom: 250px;
+    float: right;
     font-size: 30px;
     line-height: 30px;
-    top: -40%;
-  }
-  }
 
+  }
+}
+.carousel-caption{
+  width: 200px!important;
+  height: 100px!important;
+  padding: 0!important;
+
+}
 
 .info {
   color: #ffffff;
@@ -141,10 +150,31 @@
   order: 0;
   flex-grow: 0;
 }
+@media screen and (max-width: 680px) {
+  .info {
+    color: #ffffff;
+  text-align: left;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-size: 14px;
+  font-style: normal;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  }
+}
+.positionright{
+ padding: 0;
+  margin: 0;
+  float: right;
+
+
+}
 .contact {
-  position: relative;
-  bottom: 320px;
-  left: 69.5%;
+  padding: 0;
+  margin: 0;
+  float: right;
   font-weight: 400;
   font-size: 25px;
   line-height: 27px;
@@ -152,9 +182,10 @@
   transform: rotate(90deg);
 }
 
+
 @media screen and (max-width: 680px) {
-  .contact   { 
-    position: relative;
+  .contact {
+   
     bottom: 200px;
     left: 33%;
     width: 86px;
@@ -164,19 +195,9 @@
   }
 }
 
-.line1 {
-  position: relative;
-  bottom: 200px;
-  left: 23%;
-  width: 86px;
-  height: 0px;
-  border: 1px solid #ffffff;
-  transform: rotate(90deg);
-  float: right;
-}
 
 @media screen and (max-width: 680px) {
-  .line1   { 
+  .line1 {
     position: absolute;
     bottom: 130%;
     left: 98%;
@@ -200,7 +221,7 @@
 
 
 @media screen and (max-width: 680px) {
-  .icons   { 
+  .icons {
     display: flex;
     flex-direction: column;
     padding: 0px;
@@ -225,6 +246,7 @@
   line-height: 65px;
   color: #ffffff;
 }
+
 .dados {
   position: absolute;
   width: 800px;
@@ -236,9 +258,19 @@
   line-height: 50px;
   color: #ffffff;
 }
+
 .textinfo {
   font-weight: 400;
 }
+
+@media screen and (max-width: 680px) {
+  .textinfo {
+    
+    font-size: 16px;
+  }
+}
+
+
 .sobre {
   position: absolute;
   width: 800px;
@@ -252,7 +284,7 @@
 }
 
 @media screen and (max-width: 680px) {
-  .sobre { 
+  .sobre {
     position: absolute;
     width: 800px;
     height: 261px;
@@ -263,7 +295,7 @@
     line-height: 65px;
     color: #ffffff;
   }
-  }
+}
 
 .sobremim {
   position: absolute;
@@ -278,14 +310,18 @@
 }
 
 @media screen and (max-width: 680px) {
-  .sobremim { 
+  .sobremim {
     position: absolute;
-    left: 18%;
-    top: 30%;
+    left: 1%;
+    margin: 5%;
+    top: 35%;
     font-size: 14px;
-   
+    width: auto;
+    text-indent: 3em;
+    letter-spacing: 1.5px;
+
   }
-  }
+}
 
 
 
@@ -295,22 +331,28 @@
   top: 12%;
   transform: rotate(-26.84deg);
 }
+
 .qr {
   width: 300px;
   height: 300px;
 }
+
 @media screen and (max-width: 680px) {
-  .qr { 
-    width: 100px;
-    height: 100px;
+  .qr {
+    width: 150px;
+    height: 150px;
+    
   }
+}
+
+@media screen and (max-width: 680px) {
+  .qrcode {
+    top: 15%;
+    margin-right: 5%;
+
+
   }
-  @media screen and (max-width: 680px) {
-    .qrcode { 
-      top: 8%;
-     
-    }
-    }
+}
 
 
 
@@ -326,6 +368,7 @@
   left: 20%;
   top: 40%;
 }
+
 .languages {
   position: absolute;
   width: 800px;
@@ -337,6 +380,7 @@
   line-height: 50px;
   color: #ffffff;
 }
+
 .bar1 {
   position: absolute;
   width: 270px;
@@ -344,6 +388,7 @@
   left: 18%;
   top: 28%;
 }
+
 .bar2 {
   position: absolute;
   width: 270px;
@@ -351,60 +396,124 @@
   left: 18%;
   top: 40%;
 }
-.ingles{
-    position: absolute;
-    width: 800px;
-    height: 261px;
-    left: 880px;
-    top: 270px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 50px;
-    color: #ffffff;
+
+.ingles {
+  position: absolute;
+  width: 800px;
+  height: 261px;
+  left: 880px;
+  top: 270px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
 }
+
 .bar3 {
-    position: absolute;
-    width: 270px;
-    height: 15px;
-    left: 880px;
-    top: 325px;
+  position: absolute;
+  width: 270px;
+  height: 15px;
+  left: 880px;
+  top: 325px;
+}
+
+.formacao {
+  position: absolute;
+  width: 800px;
+  height: 261px;
+  left: 18%;
+  top: 45%;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 65px;
+  color: #ffffff;
+}
+
+.experiencia {
+  position: absolute;
+  width: 800px;
+  height: 861px;
+  left: 18%;
+  top: 67%;
+  font-weight: 700;
+  font-size: 25px;
+  color: #ffffff;
+  text-align: justify;
+}
+
+.exp {
+  position: absolute;
+  width: 70%;
+  height: 261px;
+  left: 18%;
+  top: 70%;
+  font-size: 25px;
+  color: #ffffff;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.projects {
+  position: absolute;
+  width: 900px;   
+  height: 450px;
+  left: 25%;
+  top: 25%;
+}
+
+.contact {
+  position: absolute;
+  bottom: 320px;
+  left: 69.5%;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 27px;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 680px) {
+  .contact {
+    position: relative;
+    bottom: 200px;
+    left: 33%;
+    width: 86px;
+    height: 0px;
+    transform: rotate(90deg);
+    float: right;
   }
-.formacao{
-    position: absolute;
-    width: 800px;
-    height: 261px;
-    left: 18%;
-    top: 45%;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 65px;
-    color: #ffffff; 
 }
-.experiencia{
-    position: absolute;
-    width: 800px;
-    height: 861px;
-    left: 18%;
-    top: 67%;
-    font-weight: 700;
-    font-size: 25px;
-    color: #ffffff; 
-    text-align: justify;
+
+.line1 {
+  width: 86px;
+  height: 0px;
+  border: 1px solid #ffffff;
+  transform: rotate(90deg);
+ 
 }
-.exp{
-    position: absolute;
-    width: 70%;
-    height: 261px;
-    left: 18%;
-    top: 70%;
-    font-size: 25px;
-    color: #ffffff;
-    text-align: justify;
-    font-weight: 400;
+
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  gap: 25px;
+  position: relative;
+  bottom: 100px;
+  float: right;
+  left: 28%;
 }
-.projects{
-    position: absolute;
-    width: 980px;
-    height: 330px;
-    left: 20%;
-    top: 25%;}
+
+
+@media screen and (max-width: 680px) {
+  .icons {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 25px;
+    position: relative;
+    bottom: 60%;
+    float: right;
+    left: 45%;
+  }
+}

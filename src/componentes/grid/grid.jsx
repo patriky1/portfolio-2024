@@ -3,19 +3,21 @@ import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
 import "./grid.css";
 
-import img1 from "../imagens/email.png";
-import img2 from "../imagens/linkedin.png";
-import img3 from "../imagens/instagram.png";
-import img4 from "../imagens/github.png";
+// import img1 from "../imagens/email.png";
+// import img2 from "../imagens/linkedin.png";
+// import img3 from "../imagens/instagram.png";
+// import img4 from "../imagens/github.png";
 import qrcode from "../imagens/qrcode.png";
 import imgbar from "../imagens/habilidades.png";
 import bar1 from "../imagens/bar1.png";
 import bar3 from "../imagens/bar2.png";
 import projects from "../imagens/projects.png";
+// import RightContact from "./contact";
 
 export default function App() {
   return (
     <div>
+
       <Carousel fade controls={false} interval={null}>
         <Carousel.Item  >
           <div className="bg1">
@@ -30,17 +32,9 @@ export default function App() {
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
             ©2022{" "}
           </p>
-          <Carousel.Caption>
-            <p className="title2">Desenvolvedor </p>{" "}
+          <Carousel.Caption >
+            <p className="title2">Desenvolvedor </p>
             <p className="titlegreen">Front-end</p>
-            <p className="contact">Contato</p>
-            <p className="line1"></p>
-            <div className="icons">
-              <img className="email" src={img1} href="mailto:patrikybrito@gmail.com" alt="email" />
-              <img className="linkedin" src={img2} alt="linkedin" />
-              <img className="insta" src={img3} alt="instagram" />
-              <img className="git" src={img4} alt="github" />
-            </div>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -49,16 +43,18 @@ export default function App() {
             <h4 className="title">Patriky</h4>
             <h4 className="title1"> Brito</h4>
           </div>
-          <h1 className="informacoes">Informações</h1>
+          
           <h1 className="dados">
-            Nome <span className="textinfo"> Patriky Lucena de Brito </span>{" "}
-            <br></br>Data de Nascimento{" "}
-            <span className="textinfo">julho, 1998</span>
-            <br></br>
-            Endereço
-            <span className="textinfo"> Cajazeiras, Paraíba, Brazil </span>{" "}
-            <br></br> Nacionalidade{" "}
-            <span className="textinfo"> Brasileiro</span>
+          <br></br> 
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+            <span className="textinfo"> Paraíba, Brazil </span>{" "}
+            
           </h1>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
@@ -82,16 +78,7 @@ export default function App() {
           <div className="qrcode">
             <img className="qr" src={qrcode} alt="qrcode" />
           </div>
-          <Carousel.Caption>
-            <p className="contact">Contato</p>
-            <p className="line1"></p>
-            <div className="icons">
-              <img className="email" src={img1} alt="email" />
-              <img className="linkedin" src={img2} alt="linkedin" />
-              <img className="insta" src={img3} alt="instagram" />
-              <img className="git" src={img4} alt="github" />
-            </div>
-          </Carousel.Caption>
+          
         </Carousel.Item>
 
 
@@ -109,18 +96,6 @@ export default function App() {
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
             ©2022{" "}
           </p>
-          <Carousel.Caption>
-            <div className="positionright">
-            <p className="contact">Contato</p>
-            <p className="line1"></p>
-            <div className="icons">
-              <img className="email" src={img1} alt="email" />
-              <img className="linkedin" src={img2} alt="linkedin" />
-              <img className="insta" src={img3} alt="instagram" />
-              <img className="git" src={img4} alt="github" />
-            </div>
-            </div>
-          </Carousel.Caption>
         </Carousel.Item>
 
 
@@ -163,16 +138,7 @@ export default function App() {
             DESIGN Docente em Programação de sistemas, E.N.E. Jose de Paiva
             Gadelha
           </h5>
-          <Carousel.Caption>
-            <p className="contact">Contato</p>
-            <p className="line1"></p>
-            <div className="icons">
-              <img className="email" src={img1} alt="email" />
-              <img className="linkedin" src={img2} alt="linkedin" />
-              <img className="insta" src={img3} alt="instagram" />
-              <img className="git" src={img4} alt="github" />
-            </div>
-          </Carousel.Caption>
+
         </Carousel.Item>
 
 
@@ -189,17 +155,7 @@ export default function App() {
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
             ©2022{" "}
           </p>
-          <Carousel.Caption>
 
-            <p className="contact">Contato</p>
-            <p className="line1"></p>
-            <div className="icons">
-              <img className="email" src={img1} alt="email" />
-              <img className="linkedin" src={img2} alt="linkedin" />
-              <img className="insta" src={img3} alt="instagram" />
-              <img className="git" src={img4} alt="github" />
-            </div>
-          </Carousel.Caption>
         </Carousel.Item>
 
 
