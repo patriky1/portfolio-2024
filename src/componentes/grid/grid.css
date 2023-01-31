@@ -246,6 +246,19 @@
   line-height: 65px;
   color: #ffffff;
 }
+@media screen and (max-width: 680px) {
+  .informacoes {
+    position: absolute;
+    width: 800px;
+    height: 261px;
+    left: 14%;
+    top: 20%;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 65px;
+    color: #ffffff
+  }
+}
 
 .dados {
   position: absolute;
@@ -275,8 +288,8 @@
   position: absolute;
   width: 800px;
   height: 261px;
-  left: 280px;
-  top: 45%;
+  left: 50px;
+  top: 18%;
   font-weight: 700;
   font-size: 25px;
   line-height: 65px;
@@ -289,7 +302,7 @@
     width: 800px;
     height: 261px;
     left: 18%;
-    top: 20%;
+    top: 25%;
     font-weight: 700;
     font-size: 25px;
     line-height: 65px;
@@ -299,14 +312,17 @@
 
 .sobremim {
   position: absolute;
-  width: 70%;
-  height: 261px;
-  left: 280px;
-  top: 53%;
+  width: 90%;
+  
+  left: 50px;
+  top: 25%;
   font-size: 25px;
   color: #ffffff;
   text-align: justify;
   font-weight: 400;
+  letter-spacing: 1.5px;
+  text-indent: 3em;
+  
 }
 
 @media screen and (max-width: 680px) {
@@ -326,29 +342,20 @@
 
 
 .qrcode {
+  width: 40%;
   position: absolute;
-  left: 60%;
-  top: 12%;
-  transform: rotate(-26.84deg);
+  left: 58%;
+  top: 60%;
+
 }
 
-.qr {
-  width: 300px;
-  height: 300px;
-}
 
-@media screen and (max-width: 680px) {
-  .qr {
-    width: 150px;
-    height: 150px;
-    
-  }
-}
 
 @media screen and (max-width: 680px) {
   .qrcode {
     top: 15%;
-    margin-right: 5%;
+    margin-right: 20%;
+    left: 55%;
 
 
   }
@@ -357,16 +364,26 @@
 
 
 .imgbar {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   padding: 0px;
-  gap: 60.93px;
   position: absolute;
-  width: 980px;
-  height: 200px;
-  left: 20%;
-  top: 40%;
+  align-items: center;
+  top: 22%;
+  left: 27%;
+
+}
+@media screen and (max-width: 480px) {
+  .imgbar {
+ 
+    width: 400px;
+    height: 450px;
+    left: 2%;
+    
+  }
+}
+
+.positionexp{
+
 }
 
 .languages {
@@ -380,21 +397,52 @@
   line-height: 50px;
   color: #ffffff;
 }
+.languages {
+  position: absolute;
+  width: 800px;
+  height: 261px;
+  left: 18%;
+  top: 20%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
+}
+.portugues {
+  position: absolute;
+  width: 800px;
+  height: 261px;
+  left: 18%;
+  top: 20%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
+}
 
 .bar1 {
   position: absolute;
-  width: 270px;
-  height: 15px;
+  width: 40%;
+  left: 13%;
+  top: 26%;
+}
+.espanhol {
+  position: absolute;
+  width: 800px;
+  height: 261px;
   left: 18%;
-  top: 28%;
+  top: 30%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
 }
 
 .bar2 {
   position: absolute;
-  width: 270px;
-  height: 15px;
-  left: 18%;
-  top: 40%;
+  width: 40%;
+  left: 13%;
+  top: 36%;
 }
 
 .ingles {
@@ -402,7 +450,7 @@
   width: 800px;
   height: 261px;
   left: 880px;
-  top: 270px;
+  top: 20%;
   font-weight: 400;
   font-size: 20px;
   line-height: 50px;
@@ -411,54 +459,49 @@
 
 .bar3 {
   position: absolute;
-  width: 270px;
-  height: 15px;
-  left: 880px;
-  top: 325px;
+  width: 40%;
+  left: 41%;
+  top: 26%;
 }
 
 .formacao {
   position: absolute;
-  width: 800px;
-  height: 261px;
   left: 18%;
-  top: 45%;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 65px;
+  top: 40%;
   color: #ffffff;
 }
-
-.experiencia {
-  position: absolute;
-  width: 800px;
-  height: 861px;
-  left: 18%;
-  top: 67%;
-  font-weight: 700;
-  font-size: 25px;
-  color: #ffffff;
-  text-align: justify;
-}
-
 .exp {
   position: absolute;
-  width: 70%;
-  height: 261px;
+  width: 80%;
+  left: 11%;
+  top: 48%;
+  color: #ffffff;
+  text-align: justify; 
+}
+
+.formacao1 {
+  position: absolute;
   left: 18%;
-  top: 70%;
-  font-size: 25px;
+  top: 60%;
+  color: #ffffff;
+}
+
+.exp1 {
+  position: absolute;
+  width: 80%;
+  left: 11%;
+  top: 68%;
   color: #ffffff;
   text-align: justify;
-  font-weight: 400;
+  
 }
 
 .projects {
   position: absolute;
   width: 900px;   
   height: 450px;
-  left: 25%;
-  top: 25%;
+  left: 15%;
+  top: 15%;
 }
 
 .contact {

@@ -8,7 +8,7 @@ import "./grid.css";
 // import img3 from "../imagens/instagram.png";
 // import img4 from "../imagens/github.png";
 import qrcode from "../imagens/qrcode.png";
-import imgbar from "../imagens/habilidades.png";
+import imgbar from "../imagens/habilidades_mobile.svg";
 import bar1 from "../imagens/bar1.png";
 import bar3 from "../imagens/bar2.png";
 import projects from "../imagens/projects.png";
@@ -43,26 +43,16 @@ export default function App() {
             <h4 className="title">Patriky</h4>
             <h4 className="title1"> Brito</h4>
           </div>
-          
-          <h1 className="dados">
-          <br></br> 
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-            <span className="textinfo"> Paraíba, Brazil </span>{" "}
-            
-          </h1>
+
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
             ©2022{" "}
           </p>
-          <h1 className="sobre">Sobre mim</h1>
+          <div className="sobre">
+          <h3>Sobre mim</h3>
+          </div>
+          <div className="sobremim">
           <h5 className="sobremim">
-            {" "}
             Sou o Patriky Brito, tenho 24 anos e sou Desenvolvedor Front-end.
             Meu objetivo é entregar experiências memoráveis para novas marcas e
             para aqueles que desejam digitalizar-se. Trabalho como programador
@@ -75,8 +65,9 @@ export default function App() {
             cachaças artesanais, cozinhar novos pratos, viajar e fazer
             caminhadas ao ar livre.
           </h5>
+          </div>
           <div className="qrcode">
-            <img className="qr" src={qrcode} alt="qrcode" />
+            <img className="qrcode" src={qrcode} alt="qrcode" />
           </div>
           
         </Carousel.Item>
@@ -89,8 +80,8 @@ export default function App() {
             <h4 className="title1"> Brito</h4>
           </div>
           <h1 className="informacoes">Habilidades Profissionais</h1>
-          <div className="habilidades">
-            <img className="imgbar" src={imgbar} alt="imgbar" />
+          <div className="imgbar1" >
+            <img className="imgbar" src={imgbar} alt="imgbar" width={680} height={450} />
           </div>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
@@ -106,39 +97,53 @@ export default function App() {
             <h4 className="title1"> Brito</h4>
           </div>
           <h1 className="informacoes">Idiomas</h1>
-          <div>
-            <h5 className="languages"> Português</h5>
-            <img className="bar1" src={bar1} alt="bar1" />
-            <h5 className="languages">
-              {" "}
-              <br></br>
-              <br></br>Espanhol
-            </h5>
-            <img className="bar2" src={bar1} alt="bar1" />
-            <h5 className="ingles"> Inglês</h5>
+       
+              <div className="portugues">
+                <h5 > Português</h5>
+              </div>
+            <div className="bar1" >
+            <img  src={bar1} className="bar1" alt="bar1" />
+            </div>
+            <div className="espanhol">
+             <h5> Espanhol </h5>
+            </div>
+            <div className="bar2">
+            <img  className="bar2" src={bar1} alt="bar1" />
+            </div>
+            <div className="ingles">
+            <h5 > Inglês</h5>
+            </div>
+            <div className="bar3">
             <img className="bar3" src={bar3} alt="bar1" />
-          </div>
+            </div>
+          
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
             ©2022{" "}
           </p>
-          <h1 className="formacao"> Formação Acadêmica</h1>
-          <h5 className="sobremim">
-            {" "}
+          <div className="formacao">
+           <h3> Formação Acadêmica</h3>
+          </div>
+          <div className="exp">
+            <h5 className="exp">
             Graduado em Redes de computadores pela Universidade Paulista UNIP,
             Sousa-PB Técnico em Informática, Instituto Federal de Ciências e
             Técnologia da Paraíba - IFPB. Ensino médio Integrado ao Técnico em
             Informática -IFPB.
-          </h5>
-          <h1 className="experiencia">Experiência profissional</h1>
-          <h5 className="exp">
-            {" "}
+            </h5>
+            </div>
+            <div className="formacao1">
+            <h3 >Experiência profissional</h3>
+            </div>
+          <div className="exp1">
+            <h5 className="exp1">
             Especialista em análise de dados no Instituto Brasileiro de
             Geografia e Estatistica - IBGE Desenvolvedor Front-end, LANE ART
             DESIGN Docente em Programação de sistemas, E.N.E. Jose de Paiva
             Gadelha
-          </h5>
-
+            </h5>
+          </div>
+          
         </Carousel.Item>
 
 
@@ -148,9 +153,12 @@ export default function App() {
             <h4 className="title">Patriky</h4>
             <h4 className="title1"> Brito</h4>
           </div>
-          <h1 className="informacoes">Projetos</h1>
+          <div className="informacoes">
+          <h3>Projetos</h3>
+          </div>
+          <div className="projects" >
           <img className="projects" src={projects} alt="projects" />
-          
+          </div>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
             ©2022{" "}
