@@ -334,7 +334,7 @@
   }
 }
 
-.imgbar {
+.imgbar1 {
   align-items: center;
   padding: 0px;
   position: absolute;
@@ -344,9 +344,12 @@
 
 }
 @media screen and (max-width: 480px) {
-  .imgbar {
+  .imgbar1 {
     width: 400px;
-    height: 450px;
+    padding: 0px;
+    position: absolute;
+    align-items: center;
+    top: 30%;
     left: 2%;
   }
 }

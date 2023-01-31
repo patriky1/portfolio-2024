@@ -81,7 +81,7 @@ export default function App() {
           </div>
           <h1 className="informacoes">Habilidades Profissionais</h1>
           <div className="imgbar1" >
-            <img className="imgbar" src={imgbar} alt="imgbar" width={680} height={450} />
+            <img className="imgbar1" src={imgbar} alt="imgbar"  />
           </div>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
