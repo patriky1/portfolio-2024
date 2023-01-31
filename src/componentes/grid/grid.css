@@ -327,8 +327,8 @@
 
 @media screen and (max-width: 680px) {
   .qrcode {
-    width: 60%;
-    top: 70%;
+    width: 50%;
+    top: 75%;
     margin-right: 20%;
     left: 35%;
   }
