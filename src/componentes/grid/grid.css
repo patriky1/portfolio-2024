@@ -41,7 +41,7 @@
   position: absolute;
   width: 800px;
   height: 261px;
-  left: 40%;
+  left: 35%;
   top: 40%;
   font-weight: 700;
   font-size: 60px;
@@ -52,7 +52,7 @@
 @media screen and (max-width: 680px) {
   .titleprincipal {
     position: absolute;
-    left: 55px;
+    left: 45px;
     top: 25%;
     font-size: 30px;
     line-height: 35px;
@@ -100,7 +100,7 @@
 @media screen and (max-width: 680px) {
   .title2 {
     
-    left: 90%;
+    left: 92%;
     float: right;
     position: relative;
     font-size: 30px;
@@ -328,9 +328,9 @@
 @media screen and (max-width: 680px) {
   .qrcode {
     width: 50%;
-    top: 75%;
+    top: 77%;
     margin-right: 20%;
-    left: 35%;
+    left: 42%;
   }
 }
 
