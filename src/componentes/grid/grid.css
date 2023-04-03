@@ -15,9 +15,13 @@
 }
 
 
-
-.title {
+.name {
   position: relative;
+  z-index: 2;
+  white-space: break-spaces;
+}
+.name .title {
+  position: absolute;
   top: 50px;
   left: 50px;
   width: 65px;
@@ -27,8 +31,8 @@
   color: #ffffff;
 }
 
-.title1 {
-  position: relative;
+.name .title1 {
+  position: absolute;
   top: 17px;
   left: 150px;
   width: 65px;
@@ -145,10 +149,7 @@
   bottom: 50px;
   left: 50px;
   font-size: 19px;
-  font-style: normal;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  z-index: 2;
 }
 @media screen and (max-width: 680px) {
   .info {
