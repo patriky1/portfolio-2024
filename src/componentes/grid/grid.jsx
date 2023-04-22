@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
 import "./grid.css";
+  
 
 // import img1 from "../imagens/email.png";
 // import img2 from "../imagens/linkedin.png";
@@ -12,17 +13,23 @@ import imgbar from "../imagens/habilidades_mobile.svg";
 import bar1 from "../imagens/bar1.png";
 import bar3 from "../imagens/bar2.png";
 import projects from "../imagens/projects.png";
-// import RightContact from "./contact";
-
+import RightContact from "./contact";
+import data from "./data.json"
+// const sobreMimMesmoHoje = {
+//   'sobre': 'Sou o Patriky Brito, tenho 24 anos e sou Desenvolvedor Front-end. Meu objetivo é entregar experiências memoráveis para novas marcas e para aqueles que desejam digitalizar-se. Trabalho como programador desde 2019, e me considero um profissional autodidata com visão estratégica, grande adaptabilidade e bom fortalecimento de equipes. Me graduei na Área de Redes de Computadores (UNIP). Atualmente trabalhando como desenvolvedor front-end na Lane art design e Formador de profissionais ágeis que buscam adentar no mercado da programação.\nNo meu tempo livre, gosto de experimentar cachaças artesanais, cozinhar novos pratos, viajar e fazer caminhadas ao ar livre.',
+//   nome: "Patriky",
+//   sobrenome: "Brito",
+// }
 export default function App() {
+  const year = new Date().getFullYear();
   return (
-    <div>
-
+    <div style={{position: "relative"}}>
+      <RightContact />
       <Carousel fade controls={false} interval={null}>
         <Carousel.Item  >
           <div className="bg1">
-            <h4 className="title">Patriky</h4>
-            <h4 className="title1"> Brito</h4>
+            <h4 className="title">{data.nome}</h4>
+            <h4 className="title1"> {data.sobrenome}</h4>
           </div>
           <div className="retangle1"></div>
           <h1 className="titleprincipal">
@@ -30,7 +37,7 @@ export default function App() {
           </h1>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
-            ©2022{" "}
+            ©{year}{" "}
           </p>
           <Carousel.Caption >
             <p className="title2">Desenvolvedor </p>
@@ -46,24 +53,14 @@ export default function App() {
 
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
-            ©2022{" "}
+            ©{year}{" "}
           </p>
           <div className="sobre">
           <h3>Sobre mim</h3>
           </div>
           <div className="sobremim">
           <h5 className="sobremim">
-            Sou o Patriky Brito, tenho 24 anos e sou Desenvolvedor Front-end.
-            Meu objetivo é entregar experiências memoráveis para novas marcas e
-            para aqueles que desejam digitalizar-se. Trabalho como programador
-            desde 2019, e me considero um profissional autodidata com visão
-            estratégica, grande adaptabilidade e bom fortalecimento de equipes.
-            Me graduei na Área de Redes de Computadores (UNIP). Atualmente
-            trabalhando como desenvolvedor front-end na Lane art design e
-            Formador de profissionais ágeis que buscam adentar no mercado da
-            programação. <br></br>No meu tempo livre, gosto de experimentar
-            cachaças artesanais, cozinhar novos pratos, viajar e fazer
-            caminhadas ao ar livre.
+            {data.sobre}
           </h5>
           </div>
           <div className="qrcode">
@@ -85,7 +82,7 @@ export default function App() {
           </div>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
-            ©2022{" "}
+            ©{year}{" "}
           </p>
         </Carousel.Item>
 
@@ -119,7 +116,7 @@ export default function App() {
           
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
-            ©2022{" "}
+            ©{year}{" "}
           </p>
           <div className="formacao">
            <h3> Formação Acadêmica</h3>
@@ -161,12 +158,10 @@ export default function App() {
           </div>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
-            ©2022{" "}
+            ©{year}{" "}
           </p>
 
         </Carousel.Item>
-
-
 
       </Carousel>
     </div>
