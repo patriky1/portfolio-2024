@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
 import "./grid.css";
+import ProjectsCarousel from "../carousel/projectCarousel";
   
 
 // import img1 from "../imagens/email.png";
@@ -154,7 +155,8 @@ export default function App() {
           <h3>Projetos</h3>
           </div>
           <div className="projects" >
-          <img className="projects" src={projects} alt="projects" />
+          {/* <img className="projects" src={projects} alt="projects" /> */}
+          <ProjectsCarousel/>
           </div>
           <p className="info">
             E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br>{" "}
