@@ -625,33 +625,18 @@ padding: 0;
    float: right;
  }
  .carousel-indicators {
-   margin-bottom: 25px !important;
+   margin-bottom: 55px !important;
  }
 }
 
 
-
-
-
-
-/*
-.icons {
- display: flex;
- flex-direction: column;
- padding: 0px;
- gap: 25px;
- position: relative;
- bottom: 100px;
- float: right;
- left: 28%;
-} */
 .icons img {
  width: 64px;
  height: 64px;
 }
 
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 780px) {
  .icons {
    display: flex;
    flex-direction: column;
@@ -663,6 +648,8 @@ padding: 0;
    left: 45%;
  }
 }
+
+
 
 
 
