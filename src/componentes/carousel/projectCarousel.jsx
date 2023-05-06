@@ -14,7 +14,7 @@ const ProjectsCarousel = () => {
   const [interval, setInterval] = useState(2000);
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = () => {
     setInterval(3000);
   };
 
