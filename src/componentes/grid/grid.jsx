@@ -13,7 +13,7 @@ import qrcode from "../imagens/qrcode.png";
 import imgbar from "../imagens/habilidades_mobile.svg";
 import bar1 from "../imagens/bar1.png";
 import bar3 from "../imagens/bar2.png";
-import projects from "../imagens/projects.png";
+
 import RightContact from "./contact";
 import data from "./data.json"
 // const sobreMimMesmoHoje = {

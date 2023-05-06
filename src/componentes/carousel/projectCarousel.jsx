@@ -1,74 +1,32 @@
+import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import carouselImage from './img-celular/img1.png'
-import carouselImage1 from './img-celular/img2.png'
-import carouselImage2 from './img-celular/img3.png'
-import carouselImage3 from './img-celular/img4.png'
-import carouselImage4 from './img-celular/img5.png'
-import carouselImage5 from './img-celular/img6.png'
-import carouselImage6 from './img-celular/img7.png'
-import carouselImage7 from './img-celular/img8.png'
+import img1 from './img-celular/img1.png';
+import img2 from './img-celular/img2.png';
+import img3 from './img-celular/img3.png';
+import img4 from './img-celular/img4.png';
+import img5 from './img-celular/img5.png';
+import img6 from './img-celular/img6.png';
+import img7 from './img-celular/img7.png';
+import img8 from './img-celular/img8.png';
+import img9 from './img-celular/img9.png';
 
-function ProjectsCarousel() {
+const ProjectsCarousel = () => {
+  const [interval, setInterval] = useState(2000);
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+
+  const handleSelect = (selectedIndex, e) => {
+    setInterval(3000);
+  };
+
   return (
-    <Carousel indicators={false}>
-      <Carousel.Item interval={1000}>
-        <img
-          className="d-block w-75"
-          src={carouselImage}
-          alt="First slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage1}
-          alt="Second slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage2}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage3}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage4}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage5}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage6}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <img
-          className="d-block w-75"
-          src={carouselImage7}
-          alt="Third slide"
-        />
-      </Carousel.Item>
+    <Carousel indicators={false} onSelect={handleSelect}>
+      {images.map((image, index) => (
+        <Carousel.Item key={index} interval={interval}>
+          <img className="d-block w-100 h-50" src={image} alt={`Slide-${index}`} />
+        </Carousel.Item>
+      ))}
     </Carousel>
   );
-}
+};
 
 export default ProjectsCarousel;
