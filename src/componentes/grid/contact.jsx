@@ -49,23 +49,24 @@ position: absolute;
     flex-direction:row;
     justify-content: center;
     align-items: center;
-    bottom: 0vh;
+    bottom: 2vh;
     gap: 1.25rem;
     .p-right, .line {
-    transform: rotate(0deg);
-    margin: 0;
+      transform: rotate(0deg);
+      margin: 0;
+      display:none;
     }
     .icons-content {
       flex-direction: row;
       padding: 0px;
-    margin: 0px;
-    gap: 35px;
-    right: 0;
-    max-height:20px;
+      margin: 0px;
+      gap: 2.1875rem;
+      right: 0;
+      max-height: 1.25rem;
     * {
-      aspect-ratio:1;
-      width: 50px;
-      heigth: 50px;
+      aspect-ratio: 1;
+      width: 3.125rem;
+      heigth: 3.125rem;
     }
     }
   }
@@ -80,13 +81,15 @@ export default function RightContact() {
         <span className="p-right">Contato</span>
         <p className="line"></p>
         <div className="icons-content">
-        <a href="mailto:patrikybrito@gmail.com" className="email"><img
+        <a href="#" className="email"><img
             src={img1}
-            alt="email"/></a>
+            href="mailto:patrikybrito@gmail.com"
+            alt="email"
+          /></a>
           
-          <a href="https://www.linkedin.com/in/patriky-brito/" className="linkedin"><img src={img2} alt="linkedin" /></a>
-          <a href="https://www.instagram.com/patrikyb_dev/" className="insta"><img src={img3} alt="instagram" /></a>
-          <a href="https://github.com/patriky1" className="git"><img src={img4} alt="github" /></a>
+          <a href="#" className="linkedin"><img src={img2} alt="linkedin" /></a>
+          <a href="#" className="insta"><img src={img3} alt="instagram" /></a>
+          <a href="#" className="git"><img src={img4} alt="github" /></a>
         </div>
       </Contact>
     </>
