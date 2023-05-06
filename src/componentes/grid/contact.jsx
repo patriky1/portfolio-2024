@@ -80,15 +80,13 @@ export default function RightContact() {
         <span className="p-right">Contato</span>
         <p className="line"></p>
         <div className="icons-content">
-        <a href="#" className="email"><img
+        <a href="mailto:patrikybrito@gmail.com" className="email"><img
             src={img1}
-            href="mailto:patrikybrito@gmail.com"
-            alt="email"
-          /></a>
+            alt="email"/></a>
           
-          <a href="#" className="linkedin"><img src={img2} alt="linkedin" /></a>
-          <a href="#" className="insta"><img src={img3} alt="instagram" /></a>
-          <a href="#" className="git"><img src={img4} alt="github" /></a>
+          <a href="https://www.linkedin.com/in/patriky-brito/" className="linkedin"><img src={img2} alt="linkedin" /></a>
+          <a href="https://www.instagram.com/patrikyb_dev/" className="insta"><img src={img3} alt="instagram" /></a>
+          <a href="https://github.com/patriky1" className="git"><img src={img4} alt="github" /></a>
         </div>
       </Contact>
     </>
