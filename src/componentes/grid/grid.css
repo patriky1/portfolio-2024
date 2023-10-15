@@ -277,12 +277,14 @@
   font-weight: 400;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 600px) {
   .sobremim { 
     position: absolute;
     left: 18%;
     top: 30%;
     font-size: 14px;
+    text-align: justify;
+    
    
   }
   }
