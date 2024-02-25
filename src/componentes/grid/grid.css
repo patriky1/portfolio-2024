@@ -1,8 +1,7 @@
 :root {
   --primary-background: #0f1012;
 }
-.carousel-item {
-}
+
 
 .section-wrapper {
   width: 100vw;
@@ -137,11 +136,15 @@ html {
     float: right;
     font-size: 1.875rem;
     line-height: 1.875rem;
+    text-align: end;
+    margin-left: auto;
   }
   .captions {
     position: relative;
     min-height: 6.25rem;
     bottom: 8rem;
+    justify-content: flex-start;
+    
   }
   .title2 {
     margin-bottom: 0;
@@ -339,7 +342,8 @@ h3.sobre {
     position: absolute;
     align-items: center;
     top: 30%;
-    left: 2%;
+    left:50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -593,8 +597,7 @@ h3.sobre {
   }
 }
 @media screen and (max-width: 42.5rem) {
-  .container-principal .info {
-  }
+  
   .section-wrapper {
     height: 100vh;
     background: var(--primary-background);

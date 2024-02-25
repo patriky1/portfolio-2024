@@ -63,10 +63,9 @@ const SectionTitleStyle = styled.div`
   color: #ffffff;
   @media screen and (max-width: 680px) {
     position: relative;
-    width: 50rem;
-    height: 10rem;
+    height: 9rem;
     left: 3.125rem;
-    top: 8%;
+    top: 6%;
     font-weight: 400;
     font-size: 1.5625rem;
     line-height: 4.0625rem;
@@ -98,7 +97,7 @@ export default function App() {
                 <Carousel.Caption>
                   <div className="captions">
                     <p className="title2">Desenvolvedor </p>
-                    <p className="titlegreen">Front-end</p>
+                    <p className="titlegreen">&nbsp;Front-end</p>
                   </div>
                 </Carousel.Caption>
                 <h1 className="titleprincipal">
