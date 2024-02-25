@@ -11,7 +11,7 @@ import img8 from "./img-celular/img8.png";
 import img9 from "./img-celular/img9.png";
 import { useEffect } from "react";
 
-const showDesktopImage = window.screen.width <= 680;
+const showDesktopImage = window?.screen.width <= 680;
 const noMobileValue = {
   source: img9,
   class: "source-img--large d-block w-100 h-desktop-image mt-5",

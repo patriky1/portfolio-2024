@@ -12,6 +12,8 @@ import RightContact from "./contact";
 import data from "./data.json";
 import styled from "styled-components";
 
+const showDesktopImage = window?.screen.width <= 680;
+
 function DeveloperName() {
   return (
     <>
@@ -49,6 +51,37 @@ function DeveloperContact() {
     </>
   );
 }
+const SectionTitleStyle = styled.div`
+  position: absolute;
+  width: 50rem;
+  height: 16.3125rem;
+  left: 18%;
+  top: 12%;
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 4.0625rem;
+  color: #ffffff;
+  @media screen and (max-width: 680px) {
+    position: relative;
+    width: 50rem;
+    height: 10rem;
+    left: 3.125rem;
+    top: 8%;
+    font-weight: 400;
+    font-size: 1.5625rem;
+    line-height: 4.0625rem;
+    color: #ffffff;
+  }
+`;
+function SectionTitle({ title }) {
+  return (
+    <>
+      <SectionTitleStyle>
+        <h3>{title}</h3>
+      </SectionTitleStyle>
+    </>
+  );
+}
 
 export default function App() {
   return (
@@ -78,17 +111,19 @@ export default function App() {
           <Carousel.Item>
             <div className="fist-item">
               <DeveloperName />
-              <h3 className="sobre">Sobre mim</h3>
+              <SectionTitle title="Sobre mim" />
               <div className="about-wrapper">
                 <h5 className="sobremim">{data.sobre}</h5>
-                <div className="end-items">
-                  <img
-                    className="qrcode"
-                    src={qrcode}
-                    alt="qrcode"
-                    width="3rem"
-                  />
-                </div>
+                {!showDesktopImage ? (
+                  <div className="end-items">
+                    <img
+                      className="qrcode"
+                      src={qrcode}
+                      alt="qrcode"
+                      width="3rem"
+                    />
+                  </div>
+                ) : null}
               </div>
             </div>
           </Carousel.Item>
@@ -97,7 +132,8 @@ export default function App() {
             <div className=" fist-item">
               <h4 className="title">Patriky</h4>
               <h4 className="title1"> Brito</h4>
-              <h1 className="informacoes">Habilidades Profissionais</h1>
+              <SectionTitle title="Habilidades Profissionais" />
+
               <div className="imgbar1">
                 <img className="imgbar1" src={imgbar} alt="imgbar" />
               </div>
@@ -110,7 +146,8 @@ export default function App() {
                 <h4 className="title">Patriky</h4>
                 <h4 className="title1"> Brito</h4>
               </div>
-              <h1 className="informacoes">Idiomas</h1>
+              <SectionTitle title="Idiomas" />
+
 
               <div className="portugues">
                 <h5> Português</h5>
@@ -161,9 +198,7 @@ export default function App() {
                 <h4 className="title">Patriky</h4>
                 <h4 className="title1"> Brito</h4>
               </div>
-              <div className="informacoes">
-                <h3>Projetos</h3>
-              </div>
+              <SectionTitle title="Projetos" />
               <div className="projects">
                 <ProjectsCarousel />
               </div>

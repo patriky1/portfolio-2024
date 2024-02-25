@@ -25,22 +25,22 @@ html {
 
 .title {
   position: relative;
-  top: 50px;
-  left: 50px;
-  width: 65px;
-  height: 27px;
+  top: 3.125rem;
+  left: 3.125rem;
+  width: 4.0625rem;
+  height: 1.6875rem;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #ffffff;
 }
 
 .title1 {
   position: relative;
-  top: 17px;
-  left: 150px;
-  width: 65px;
-  height: 27px;
-  font-size: 30px;
+  top: 1.0625rem;
+  left: 9.375rem;
+  width: 4.0625rem;
+  height: 1.6875rem;
+  font-size: 1.875rem;
   color: #ffffff;
 }
 .container-principal {
@@ -61,14 +61,14 @@ html {
 }
 .titleprincipal {
   font-weight: 700;
-  font-size: 60px;
-  line-height: 65px;
+  font-size: 3.75rem;
+  line-height: 4.0625rem;
   color: #ffffff;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .container-principal .titleprincipal {
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 1.875rem;
+    line-height: 2.1875rem;
     margin-left: 20%;
     margin-top: 20%;
     transform: translateX(-10%);
@@ -79,14 +79,14 @@ html {
   position: absolute;
   width: 50%;
   height: 100%;
-  left: 300px;
-  top: 40px;
+  left: 18.75rem;
+  top: 2.5rem;
   background: #d9d9d9;
   mix-blend-mode: overlay;
   transform: rotate(26.84deg);
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .retangle1 {
     position: absolute;
     width: 100%;
@@ -101,16 +101,16 @@ html {
 
 .title2 {
   font-weight: 700;
-  font-size: 48px;
-  line-height: 65px;
+  font-size: 3rem;
+  line-height: 4.0625rem;
   color: #ffffff;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .title2 {
     position: relative;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 1.875rem;
+    line-height: 1.875rem;
   }
 }
 
@@ -118,8 +118,8 @@ html {
   position: relative;
   color: #6afaa3;
   font-weight: 700;
-  font-size: 48px;
-  line-height: 65px;
+  font-size: 3rem;
+  line-height: 4.0625rem;
 }
 
 .carousel-caption {
@@ -130,28 +130,28 @@ html {
   text-align: center;
   justify-content: center;
   flex-flow: row wrap;
-  min-height: 210px;
+  min-height: 13.125rem;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .titlegreen {
     float: right;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 1.875rem;
+    line-height: 1.875rem;
   }
   .captions {
     position: relative;
-    min-height: 100px;
+    min-height: 6.25rem;
     bottom: 8rem;
   }
   .title2 {
     margin-bottom: 0;
-    line-height: 14px;
+    line-height: 0.875rem;
   }
   .fist-item{
     height: 90vh;
   }
   .fist-item .container-principal .carousel-caption {
-    bottom: 120px;
+    bottom: 7.5rem;
   }
   .container-principal .info {
     margin-top: 30vh;
@@ -162,7 +162,7 @@ html {
   display: flex;
   color: #ffffff;
   text-align: left;
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-style: normal;
   flex: none;
   align-self: self-end;
@@ -172,9 +172,10 @@ html {
   justify-content: flex-end;
   margin-inline: 2rem 6rem;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .sobremim {
     padding-inline: 0;
+    top:10%;
   }
   .end-items {
     margin-inline: 2rem 2rem;
@@ -191,41 +192,41 @@ html {
   margin: 0;
   float: right;
   font-weight: 400;
-  font-size: 25px;
-  line-height: 27px;
+  font-size: 1.5625rem;
+  line-height: 1.6875rem;
   color: #ffffff;
   transform: rotate(90deg);
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .contact {
-    bottom: 200px;
+    bottom: 12.5rem;
     left: 33%;
-    width: 86px;
-    height: 0px;
+    width: 5.375rem;
+    height: 0rem;
     transform: rotate(90deg);
     float: right;
   }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .line1 {
     position: absolute;
     bottom: 130%;
     left: 98%;
-    width: 86px;
-    height: 0px;
+    width: 5.375rem;
+    height: 0rem;
     transform: rotate(90deg);
     float: right;
   }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .icons {
     display: flex;
     flex-direction: column;
-    padding: 0px;
-    gap: 25px;
+    padding: 0rem;
+    gap: 1.5625rem;
     position: relative;
     bottom: 60%;
     float: right;
@@ -235,25 +236,25 @@ html {
 
 .informacoes {
   position: absolute;
-  width: 800px;
-  height: 261px;
+  width: 50rem;
+  height: 16.3125rem;
   left: 18%;
   top: 12%;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 65px;
+  font-size: 1.5625rem;
+  line-height: 4.0625rem;
   color: #ffffff;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .informacoes {
     position: absolute;
-    width: 800px;
-    height: 261px;
-    left: 4%;
+    width: 50rem;
+    height: 16.3125rem;
+    left: 3.125rem;
     top: 12%;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 65px;
+    font-size: 1.5625rem;
+    line-height: 4.0625rem;
     color: #ffffff;
   }
 }
@@ -261,39 +262,42 @@ html {
 h3.sobre {
   position: relative;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 65px;
+  font-size: 1.5625rem;
+  line-height: 4.0625rem;
   color: #ffffff;
-  padding-inline-start: 32px;
+  padding-inline-start: 3.125rem;
   margin-top: 2rem;
 }
 
-/* @media screen and (max-width: 680px) {
+/* @media screen and (max-width: 42.5rem) {
   .sobre {
     position: absolute;
-    width: 800px;
-    height: 261px;
+    width: 50rem;
+    height: 16.3125rem;
     left: 12%;
     top: 15%;
     font-weight: 700;
-    font-size: 25px;
-    line-height: 65px;
+    font-size: 1.5625rem;
+    line-height: 4.0625rem;
     color: #ffffff;
   }
 } */
 .sobremim {
-  padding-inline: 2rem 6rem;
-  font-size: 25px;
+  padding-inline: 4rem 9rem;
+  font-size: 1.5625rem;
   color: #ffffff;
   text-align: justify;
   font-weight: 400;
-  letter-spacing: 1.5px;
   text-indent: 3em;
-  white-space: pre-wrap;
+  text-justify: inter-word;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: -0.05em;
 }
 
 .last-8 {
-  height: 428px;
+  height: 26.75rem;
 }
 
 .qrcode {
@@ -301,7 +305,7 @@ h3.sobre {
   aspect-ratio: 1 / 1;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .sobremim {
     padding-inline: 2rem;
     font-weight: 300;
@@ -315,23 +319,23 @@ h3.sobre {
     aspect-ratio: 1 / 1;
   }
   .info {
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
   }
 }
 
 .imgbar1 {
   align-items: center;
-  padding: 0px;
+  padding: 0rem;
   position: absolute;
   align-items: center;
   top: 22%;
   left: 27%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .imgbar1 {
-    width: 400px;
-    padding: 0px;
+    width: 25rem;
+    padding: 0rem;
     position: absolute;
     align-items: center;
     top: 30%;
@@ -341,25 +345,25 @@ h3.sobre {
 
 .portugues {
   position: absolute;
-  width: 800px;
-  height: 261px;
+  width: 50rem;
+  height: 16.3125rem;
   left: 18%;
   top: 20%;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 50px;
+  font-size: 1.25rem;
+  line-height: 3.125rem;
   color: #ffffff;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .portugues {
     position: absolute;
-    width: 800px;
-    height: 261px;
+    width: 50rem;
+    height: 16.3125rem;
     left: 4%;
     top: 20%;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 1.25rem;
+    line-height: 3.125rem;
     color: #ffffff;
   }
 }
@@ -370,7 +374,7 @@ h3.sobre {
   left: 13%;
   top: 26%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .bar1 {
     position: absolute;
     width: 60%;
@@ -380,23 +384,23 @@ h3.sobre {
 }
 .espanhol {
   position: absolute;
-  width: 800px;
-  height: 261px;
+  width: 50rem;
+  height: 16.3125rem;
   left: 18%;
   top: 30%;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 50px;
+  font-size: 1.25rem;
+  line-height: 3.125rem;
   color: #ffffff;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .espanhol {
     position: absolute;
-    width: 800px;
+    width: 50rem;
     left: 4%;
     top: 30%;
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 1.25rem;
+    line-height: 3.125rem;
     color: #ffffff;
   }
 }
@@ -407,7 +411,7 @@ h3.sobre {
   left: 13%;
   top: 36%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .bar2 {
     position: absolute;
     width: 60%;
@@ -418,22 +422,22 @@ h3.sobre {
 
 .ingles {
   position: absolute;
-  width: 800px;
-  height: 261px;
-  left: 880px;
+  width: 50rem;
+  height: 16.3125rem;
+  left: 55rem;
   top: 20%;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 50px;
+  font-size: 1.25rem;
+  line-height: 3.125rem;
   color: #ffffff;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .ingles {
     position: absolute;
-    width: 800px;
-    height: 261px;
+    width: 50rem;
+    height: 16.3125rem;
     left: 57%;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #ffffff;
   }
 }
@@ -443,7 +447,7 @@ h3.sobre {
   left: 41%;
   top: 26%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .bar3 {
     position: absolute;
     width: 60%;
@@ -458,7 +462,7 @@ h3.sobre {
   top: 40%;
   color: #ffffff;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .formacao {
     position: absolute;
     left: 4%;
@@ -473,8 +477,15 @@ h3.sobre {
   top: 48%;
   color: #ffffff;
   text-align: justify;
+  font-weight: 400;
+  text-indent: 3em;
+  text-justify: inter-word;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: -0.05em;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .exp {
     position: absolute;
     width: 94%;
@@ -482,7 +493,8 @@ h3.sobre {
     top: 45%;
     color: #ffffff;
     text-align: justify;
-    font-size: 15px;
+    font-size: 0.9375rem;
+
   }
 }
 .formacao1 {
@@ -491,7 +503,7 @@ h3.sobre {
   top: 60%;
   color: #ffffff;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .formacao1 {
     position: absolute;
     left: 4%;
@@ -508,13 +520,13 @@ h3.sobre {
   color: #ffffff;
   text-align: justify;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .exp1 {
     position: absolute;
     width: 94%;
     left: 4%;
     top: 64%;
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: #ffffff;
     text-align: justify;
   }
@@ -523,38 +535,38 @@ h3.sobre {
 .projects {
   position: absolute;
   width: 50%;
-  height: 450px;
+  height: 28.125rem;
   left: 50%;
   top: 15%;
   transform: translateX(-50%);
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .projects {
     position: absolute;
-    width: 400px;
-    height: 250px;
+    width: 25rem;
+    height: 15.625rem;
     top: 25%;
   }
 }
 
 .contact {
   position: absolute;
-  bottom: 320px;
+  bottom: 20rem;
   left: 69.5%;
   font-weight: 400;
-  font-size: 25px;
-  line-height: 27px;
+  font-size: 1.5625rem;
+  line-height: 1.6875rem;
   color: #ffffff;
   transform: rotate(90deg);
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 48.75rem) {
   .contact {
     position: relative;
-    bottom: 200px;
+    bottom: 12.5rem;
     left: 33%;
-    width: 86px;
-    height: 0px;
+    width: 5.375rem;
+    height: 0rem;
     transform: rotate(90deg);
     float: right;
   }
@@ -564,23 +576,23 @@ h3.sobre {
 }
 
 .icons img {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 48.75rem) {
   .icons {
     display: flex;
     flex-direction: column;
-    padding: 0px;
-    gap: 25px;
+    padding: 0rem;
+    gap: 1.5625rem;
     position: relative;
     bottom: 60%;
     float: right;
     left: 45%;
   }
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .container-principal .info {
   }
   .section-wrapper {
