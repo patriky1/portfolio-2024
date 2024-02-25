@@ -62,7 +62,7 @@ position: absolute;
       margin: 0px;
       gap: 2.1875rem;
       right: 0;
-      max-height: 1.25rem;
+      top: 1rem;
     * {
       aspect-ratio: 1;
       width: 3.125rem;
