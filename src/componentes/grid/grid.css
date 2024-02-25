@@ -286,6 +286,7 @@ h3.sobre {
   }
 } */
 .sobremim {
+  margin-top: 9%;
   padding-inline: 4rem 9rem;
   font-size: 1.5625rem;
   color: #ffffff;
@@ -498,6 +499,7 @@ h3.sobre {
     color: #ffffff;
     text-align: justify;
     font-size: 0.9375rem;
+    
 
   }
 }
@@ -523,6 +525,8 @@ h3.sobre {
   top: 68%;
   color: #ffffff;
   text-align: justify;
+  text-indent: 3em;
+
 }
 @media screen and (max-width: 30rem) {
   .exp1 {
