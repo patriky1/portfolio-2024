@@ -37,13 +37,31 @@ export default function CircularWithValueLabel({value= 0 ,stuckName}) {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setProgress(value);
-    }, 1500);
+    }, 3000); 
+
     return () => {
-      clearInterval(timer);
+      clearTimeout(timer); 
     };
   }, [value]);
+
+  React.useEffect(() => {
+    const clearProgress = () => {
+      setProgress(0); 
+    };
+
+    const timer = setTimeout(() => {
+      clearProgress();
+      setTimeout(() => {
+        setProgress(value);
+      }, 3000);
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer); 
+    };
+  }, [progress, value]);
 
   return (
     <>
