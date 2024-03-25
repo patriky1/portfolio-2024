@@ -20,7 +20,7 @@ function DeveloperStack() {
       value: 90,
     },
     {
-      label: "php",
+      label: "Php",
       value: 68,
     },
     {
@@ -39,15 +39,13 @@ function DeveloperStack() {
       label: "Python",
       value: 95,
     },
-
   ];
   return (
     <>
       <div className="marginBox container position-relative d-flex  flex-direction-row flex-wrap ">
         {stucks.map((item, index) => (
-          <div  key={index} >
+          <div key={index}>
             <CircularWithValueLabel
-            
               stuckName={item.label}
               value={item?.value}
             />
@@ -216,10 +214,10 @@ export default function App() {
               </div>
               <div className="exp">
                 <h5 className="exp">
-                  Graduado em Redes de computadores pela Universidade Paulista
-                  UNIP, Sousa-PB Técnico em Informática, Instituto Federal de
-                  Ciências e Técnologia da Paraíba - IFPB. Ensino médio
-                  Integrado ao Técnico em Informática -IFPB.
+                  Especialista em Engenharia de Software (Descomplica), graduado em Redes de
+                  Computadores pela Universidade Paulista (UNIP) em Sousa,
+                  Paraíba. Técnico em Informática pelo Instituto Federal de
+                  Ciência e Tecnologia da Paraíba (IFPB)
                 </h5>
               </div>
               <div className="formacao1">
