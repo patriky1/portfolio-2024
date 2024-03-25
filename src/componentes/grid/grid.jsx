@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
 import "./grid.css";
 import ProjectsCarousel from "../carousel/projectCarousel";
+import { CircularProgress } from "@mui/material";
 import qrcode from "../imagens/qrcode.png";
 import imgbar from "../imagens/habilidades_mobile.svg";
 import bar1 from "../imagens/bar1.png";
@@ -11,8 +12,52 @@ import bar3 from "../imagens/bar2.png";
 import RightContact from "./contact";
 import data from "./data.json";
 import styled from "styled-components";
+import CircularWithValueLabel from "./DeveloperStuck.tsx";
 
 const showDesktopImage = window?.screen.width <= 680;
+function DeveloperStack() {
+  const stucks = [
+    {
+      label: "wordPress",
+      value: 90,
+    },
+    {
+      label: "php",
+      value: 68,
+    },
+    {
+      label: "JavaScript",
+      value: 90,
+    },
+    {
+      label: "React JS",
+      value: 80,
+    },
+    {
+      label: "React Native",
+      value: 75,
+    },
+    {
+      label: "Python",
+      value: 95,
+    },
+
+  ];
+  return (
+    <>
+      <div className="marginBox container position-relative d-flex  flex-direction-row flex-wrap ">
+        {stucks.map((value, index) => (
+          <div  key={index} >
+            <CircularWithValueLabel
+              stuckName={value.label}
+              value={value.value}
+            />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
 
 function DeveloperName() {
   return (
@@ -134,7 +179,9 @@ export default function App() {
               <SectionTitle title="Habilidades Profissionais" />
 
               <div className="imgbar1">
-                <img className="imgbar1" src={imgbar} alt="imgbar" />
+                <DeveloperStack />
+
+                {/* <img className="imgbar1" src={imgbar} alt="imgbar" /> */}
               </div>
             </div>
           </Carousel.Item>
@@ -146,7 +193,6 @@ export default function App() {
                 <h4 className="title1"> Brito</h4>
               </div>
               <SectionTitle title="Idiomas" />
-
 
               <div className="portugues">
                 <h5> Português</h5>

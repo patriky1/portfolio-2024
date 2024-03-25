@@ -104,12 +104,32 @@ html {
   line-height: 4.0625rem;
   color: #ffffff;
 }
-
+.MuiCircularProgress-root.MuiCircularProgress-determinate.slider {
+  width: 120px !important;
+  height: 120px !important;
+}
+.marginBox{
+  max-width: 650px!important;
+  justify-content: space-around;
+  gap: 50px 50px;
+}
+.MuiCircularProgress-circle {
+  transition: stroke-dashoffset 2000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important
+}
 @media screen and (max-width: 42.5rem) {
   .title2 {
     position: relative;
     font-size: 1.875rem;
     line-height: 1.875rem;
+  }
+  .MuiCircularProgress-root.MuiCircularProgress-determinate.slider {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .marginBox{
+    max-width: 500px!important;
+    justify-content: space-around;
+    gap: 10px 10px;
   }
 }
 
@@ -312,7 +332,7 @@ h3.sobre {
     padding-inline: 2rem;
     font-weight: 300;
     font-size: 1rem;
-    bottom: 8%;
+    bottom: 80px;
   }
   
   .end-items {
