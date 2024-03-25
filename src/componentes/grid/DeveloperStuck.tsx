@@ -33,23 +33,23 @@ function CircularProgressWithLabel(
   );
 }
 
-export default function CircularWithValueLabel(props) {
+export default function CircularWithValueLabel({value= 0 ,stuckName}) {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress(props.value);
+      setProgress(value);
     }, 1500);
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [value]);
 
   return (
     <>
       <div className="container d-flex flex-column justify-content-center align-items-center">
         <CircularProgressWithLabel value={progress} className="slider" color="success" />
-        <span className="text-white mt-2">{props.stuckName}</span>
+        <span className="text-white mt-2">{stuckName}</span>
       </div>
     </>
   )

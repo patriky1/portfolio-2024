@@ -44,11 +44,12 @@ function DeveloperStack() {
   return (
     <>
       <div className="marginBox container position-relative d-flex  flex-direction-row flex-wrap ">
-        {stucks.map((value, index) => (
+        {stucks.map((item, index) => (
           <div  key={index} >
             <CircularWithValueLabel
-              stuckName={value.label}
-              value={value.value}
+            
+              stuckName={item.label}
+              value={item?.value}
             />
           </div>
         ))}
