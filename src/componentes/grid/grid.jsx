@@ -3,9 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
 import "./grid.css";
 import ProjectsCarousel from "../carousel/projectCarousel";
-import { CircularProgress } from "@mui/material";
 import qrcode from "../imagens/qrcode.png";
-import imgbar from "../imagens/habilidades_mobile.svg";
 import bar1 from "../imagens/bar1.png";
 import bar3 from "../imagens/bar2.png";
 
