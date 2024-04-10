@@ -162,7 +162,7 @@ html {
   .captions {
     position: relative;
     min-height: 6.25rem;
-    bottom: 8rem;
+    bottom: 7rem;
     justify-content: flex-start;
     
   }
