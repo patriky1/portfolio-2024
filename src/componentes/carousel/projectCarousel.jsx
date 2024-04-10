@@ -9,6 +9,8 @@ import img6 from "./img-celular/img6.png";
 import img7 from "./img-celular/img7.png";
 import img8 from "./img-celular/img8.png";
 import img9 from "./img-celular/img9.png";
+import img10 from "./img-celular/img10.png";
+
 import { useEffect } from "react";
 
 const showDesktopImage = window?.screen.width <= 680;
@@ -31,6 +33,8 @@ const ProjectsCarousel = () => {
       { source: img6, class: "source-img d-block w-100 h-100" },
       { source: img7, class: "source-img d-block w-100 h-100" },
       { source: img8, class: "source-img d-block w-100 h-100" },
+      { source: img10, class: "source-img d-block w-50 h-100" },
+
     ];
 
     setRenderData(showDesktopImage ? data : [...data, noMobileValue]);

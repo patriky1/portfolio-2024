@@ -136,15 +136,16 @@ export default function App() {
               <DeveloperName />
               <div className="retangle1"></div>
               <div className="container-principal">
+              <h1 className="titleprincipal">
+                  Ajudando<br></br> Negócios e <br></br> Organizações a Crescer
+                </h1>
                 <Carousel.Caption>
                   <div className="captions">
                     <p className="title2">Desenvolvedor </p>
                     <p className="titlegreen">&nbsp;Front-end</p>
                   </div>
                 </Carousel.Caption>
-                <h1 className="titleprincipal">
-                  Ajudando<br></br> Negócios e <br></br> Organizações a Crescer
-                </h1>
+                
               </div>
             </div>
           </Carousel.Item>
