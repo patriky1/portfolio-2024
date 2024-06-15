@@ -74,7 +74,7 @@ const DeveloperContactStyle = styled.p`
   font-style: normal;
   top: 60vh;
   z-index: 2;
-  margin-block-start: 13%;
+  margin-block-start: 10%;
   margin-inline-start: 3%;
 
   @media screen and (max-width: 680px) {
