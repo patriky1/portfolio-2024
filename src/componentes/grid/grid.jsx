@@ -215,9 +215,8 @@ export default function App() {
               </div>
               <div className="exp">
                 <h5 className="exp">
-                  Especialista em Engenharia de Software (Descomplica), graduado
-                  em Redes de Computadores pela Universidade Paulista (UNIP) em
-                  Sousa, Paraíba. Técnico em Informática pelo Instituto Federal
+                  Especialista em Engenharia de Software (Faculdade Descomplica), graduado
+                  em Redes de Computadores. Técnico em Informática pelo Instituto Federal
                   de Ciência e Tecnologia da Paraíba (IFPB)
                 </h5>
               </div>
