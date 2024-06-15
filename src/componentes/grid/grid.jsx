@@ -89,7 +89,7 @@ function DeveloperContact() {
     <>
       <DeveloperContactStyle>
         E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br> ©{year}{" "}
-        <div><a className="text-decoration-none text-white" href='https://contador.s12.com.br'>Você é o Visitante Nº:&emsp; <img src='https://contador.s12.com.br/img-Zw33yxB9Bx35dD3B-3.gif' border='0' alt='contador de acesso grátis' className="w-20"/></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=Zw33yxB9Bx35dD3B'></script></div>
+        <div><a className="text-decoration-none text-white" href='https://contador.s12.com.br'>Você é o Visitante Nº:&emsp; <img src='https://contador.s12.com.br/img-Z9x228cy9x7666z9-14.gif' border='0' alt='contador de acesso grátis' className="w-20"/></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=Z9x228cy9x7666z9'></script></div>
 
       </DeveloperContactStyle>
     </>
