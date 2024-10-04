@@ -9,6 +9,9 @@ import img6 from "./img-celular/img6.png";
 import img7 from "./img-celular/img7.png";
 import img8 from "./img-celular/img8.png";
 import img9 from "./img-celular/img9.png";
+import img11 from "./img-celular/img11.png";
+import img13 from "./img-celular/img13.jpg";
+import img14 from "./img-celular/img14.png";
 
 import { useEffect } from "react";
 
@@ -16,6 +19,7 @@ const showDesktopImage = window?.screen.width <= 680;
 const noMobileValue = {
   source: img9,
   class: "source-img--large d-block w-100 h-desktop-image mt-5",
+
 };
 
 const ProjectsCarousel = () => {
@@ -32,6 +36,10 @@ const ProjectsCarousel = () => {
       { source: img6, class: "source-img d-block w-100 h-100" },
       { source: img7, class: "source-img d-block w-100 h-100" },
       { source: img8, class: "source-img d-block w-100 h-100" },
+      { source: img11, class: "source-img d-block w-100 h-140" },
+      { source: img13, class: "source-img d-block w-100 h-150" },
+ 
+      { source: img14, class: "source-img d-block w-100 h-100" },
       // { source: img10, class: "source-img d-block w-50 h-100" },
 
     ];
@@ -47,7 +55,7 @@ const ProjectsCarousel = () => {
     <Carousel indicators={false} onSelect={handleSelect}>
       {renderData.map((image, index) => (
         <Carousel.Item key={index} interval={interval}>
-          {image.class === renderData[8]?.class ? (
+          {image.class === renderData[10]?.class ? (
             <div className={`last-${index}`}>
               <img
                 className={image.class}
