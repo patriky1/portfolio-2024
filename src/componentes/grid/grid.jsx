@@ -1,255 +1,219 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import Carousel from "react-bootstrap/Carousel";
-import "./grid.css";
-import ProjectsCarousel from "../carousel/projectCarousel";
-import qrcode from "../imagens/qrcode.png";
-import bar1 from "../imagens/bar1.png";
-import bar3 from "../imagens/bar2.png";
-
-import RightContact from "./contact";
 import data from "./data.json";
-import styled from "styled-components";
-import CircularWithValueLabel from "./DeveloperStuck.tsx";
+import SkillRing from "./SkillRing";
+import RightContact, { SocialLinks } from "./contact";
+import ProjectsCarousel from "../carousel/projectCarousel";
+import projectImages from "../carousel/assets";
+import { useInView } from "../ui/hooks";
+import Icon from "../ui/Icon";
+import qrcode from "../imagens/qrcode.png";
+import "./grid.css";
 
-const showDesktopImage = window?.screen.width <= 680;
-function DeveloperStack() {
-  const stucks = [
-    {
-      label: "wordPress",
-      value: 90,
-    },
-    {
-      label: "Php",
-      value: 68,
-    },
-    {
-      label: "JavaScript",
-      value: 90,
-    },
-    {
-      label: "React JS",
-      value: 80,
-    },
-    {
-      label: "React Native",
-      value: 75,
-    },
-    {
-      label: "Python",
-      value: 95,
-    },
-  ];
+const HERO_PHONES = ["img5", "img4", "img8"];
+
+function Hero() {
   return (
-    <>
-      <div className="marginBox container position-relative d-flex  flex-direction-row flex-wrap ">
-        {stucks.map((item, index) => (
-          <div key={index}>
-            <CircularWithValueLabel
-              stuckName={item.label}
-              value={item?.value}
-            />
+    <section id="inicio" className="hero" aria-labelledby="hero-title">
+      <div className="hero__blade" aria-hidden="true" />
+      <div className="container hero__inner">
+        <div className="hero__copy">
+          <p className="hero__role">{data.cargo}</p>
+          <h1 id="hero-title" className="hero__name">
+            <span className="hero__line">{data.nome}</span>
+            <span className="hero__line hero__line--offset">{data.sobrenome}</span>
+          </h1>
+          <p className="hero__lead">{data.chamada}</p>
+          <div className="hero__actions">
+            <a className="btn btn--primary" href="#projetos">
+              Ver projetos
+            </a>
+            <a className="btn btn--ghost" href="#contato">
+              Entrar em contato
+            </a>
           </div>
+          <SocialLinks className="hero__social" />
+        </div>
+
+        <div className="hero__showcase" aria-hidden="true">
+          {HERO_PHONES.map((id, index) => {
+            const image = projectImages[id];
+            return (
+              <img
+                key={id}
+                className={`hero__phone hero__phone--${index + 1}`}
+                src={image.sm}
+                srcSet={`${image.sm} ${image.smW}w, ${image.lg} ${image.lgW}w`}
+                sizes="(min-width: 900px) 260px, 34vw"
+                width={image.width}
+                height={image.height}
+                alt=""
+                decoding="async"
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  const paragraphs = data.sobre.split("\n\n");
+  return (
+    <section id="sobre" className="section" aria-labelledby="sobre-title">
+      <div className="container about">
+        <div className="about__aside">
+          <h2 id="sobre-title" className="section__title">
+            {data.about}
+          </h2>
+          <figure className="about__qr">
+            <img
+              src={qrcode}
+              alt="QR code que abre o perfil de Patriky Brito no LinkedIn"
+              width="504"
+              height="582"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <a
+            className="btn btn--ghost about__linkedin"
+            href={data.contato.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="linkedin" />
+            Ver perfil no LinkedIn
+          </a>
+        </div>
+        <div className="about__text">
+          {paragraphs.map((text, index) => (
+            <p key={index} className={index === 0 ? "about__first" : undefined}>
+              {text}
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Skills() {
+  const [ref, inView] = useInView({ threshold: 0.3 });
+  return (
+    <section
+      id="habilidades"
+      className="section section--raised"
+      aria-labelledby="habilidades-title"
+    >
+      <div className="container">
+        <header className="section__head">
+          <h2 id="habilidades-title" className="section__title">
+            Habilidades profissionais
+          </h2>
+        </header>
+        <ul ref={ref} className="skills">
+          {data.habilidades.map((skill, index) => (
+            <SkillRing
+              key={skill.label}
+              label={skill.label}
+              value={skill.value}
+              index={index}
+              active={inView}
+            />
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function LanguageMeter({ idioma, nivel, max = 5 }) {
+  return (
+    <li className="language">
+      <span className="language__name">{idioma}</span>
+      <span className="language__dots" role="img" aria-label={`Nível ${nivel} de ${max}`}>
+        {Array.from({ length: max }, (_, i) => (
+          <span key={i} className={`language__dot${i < nivel ? " is-on" : ""}`} />
         ))}
+      </span>
+    </li>
+  );
+}
+
+function Timeline({ items, titleKey }) {
+  return (
+    <ul className="timeline">
+      {items.map((item) => (
+        <li key={item[titleKey]} className="timeline__item">
+          <h4 className="timeline__title">{item[titleKey]}</h4>
+          {item.local ? <p className="timeline__meta">{item.local}</p> : null}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function Journey() {
+  return (
+    <section id="trajetoria" className="section" aria-labelledby="trajetoria-title">
+      <div className="container">
+        <header className="section__head">
+          <h2 id="trajetoria-title" className="section__title">
+            Trajetória
+          </h2>
+        </header>
+        <div className="journey">
+          <div className="journey__block">
+            <h3 className="journey__title">Experiência profissional</h3>
+            <Timeline items={data.experiencia} titleKey="cargo" />
+          </div>
+          <div className="journey__block">
+            <h3 className="journey__title">Formação acadêmica</h3>
+            <Timeline items={data.formacao} titleKey="curso" />
+          </div>
+          <div className="journey__block journey__block--languages">
+            <h3 className="journey__title">Idiomas</h3>
+            <ul className="languages">
+              {data.idiomas.map((item) => (
+                <LanguageMeter key={item.idioma} {...item} />
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 }
 
-function DeveloperName() {
+function Projects() {
   return (
-    <>
-      <div className="bg1">
-        <h4 className="title">Patriky</h4>
-        <h4 className="title1"> Brito</h4>
+    <section
+      id="projetos"
+      className="section section--raised"
+      aria-labelledby="projetos-title"
+    >
+      <div className="container">
+        <header className="section__head">
+          <h2 id="projetos-title" className="section__title">
+            Projetos
+          </h2>
+        </header>
+        <ProjectsCarousel />
       </div>
-    </>
-  );
-}
-const DeveloperContactStyle = styled.p`
-  position: absolute;
-  color: #ffffff;
-  text-align: left;
-  font-size: 19px;
-  font-style: normal;
-  top: 60vh;
-  z-index: 2;
-  margin-block-start: 10%;
-  margin-inline-start: 3%;
-
-  @media screen and (max-width: 680px) {
-    top: 65vh;
-    font-size: 16px;
-    font-style: normal;
-  }
-`;
-function DeveloperContact() {
-  const year = new Date().getFullYear();
-  return (
-    <>
-      <DeveloperContactStyle>
-        E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br> ©{year}{" "}
-        <div><a className="text-decoration-none text-white" href='https://contador.s12.com.br'>Você é o Visitante Nº:&emsp; <img src='https://contador.s12.com.br/img-Z9x228cy9x7666z9-14.gif' border='0' alt='contador de acesso grátis' className="w-20"/></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=Z9x228cy9x7666z9'></script></div>
-
-      </DeveloperContactStyle>
-    </>
-  );
-}
-const SectionTitleStyle = styled.div`
-  position: absolute;
-  width: 50rem;
-  height: 16.3125rem;
-  left: 18%;
-  top: 12%;
-  font-weight: 700;
-  font-size: 1.5625rem;
-  line-height: 4.0625rem;
-  color: #ffffff;
-  @media screen and (max-width: 680px) {
-    position: relative;
-    height: 9rem;
-    left: 3.125rem;
-    top: 6%;
-    font-weight: 400;
-    font-size: 1.5625rem;
-    line-height: 4.0625rem;
-    color: #ffffff;
-  }
-`;
-function SectionTitle({ title }) {
-  return (
-    <>
-      <SectionTitleStyle>
-        <h3>{title}</h3>
-      </SectionTitleStyle>
-    </>
+    </section>
   );
 }
 
+/** Conteúdo principal da página (mantém o nome/export do componente original). */
 export default function App() {
   return (
-    <div style={{ position: "relative" }}>
+    <>
       <RightContact />
-      <DeveloperContact />
-      <section className="section-wrapper">
-        <Carousel fade controls={false} interval={null}>
-          <Carousel.Item>
-            <div className="fist-item">
-              <DeveloperName />
-              <div className="retangle1"></div>
-              <div className="container-principal">
-              <h1 className="titleprincipal">
-                  Ajudando<br></br> Negócios e <br></br> Organizações a Crescer
-                </h1>
-                <Carousel.Caption>
-                  <div className="captions">
-                    <p className="title2">Desenvolvedor </p>
-                    <p className="titlegreen">&nbsp;Front-end</p>
-                  </div>
-                </Carousel.Caption>
-                
-              </div>
-            </div>
-          </Carousel.Item>
-
-          <Carousel.Item>
-            <div className="fist-item">
-              <DeveloperName />
-              <SectionTitle title="Sobre mim" />
-              <div className="about-wrapper">
-                <h5 className="sobremim">{data.sobre}</h5>
-                {!showDesktopImage ? (
-                  <div className="end-items">
-                    <img
-                      className="qrcode"
-                      src={qrcode}
-                      alt="qrcode"
-                      width="3rem"
-                    />
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          </Carousel.Item>
-
-          <Carousel.Item interval={null}>
-            <div className=" fist-item">
-              <h4 className="title">Patriky</h4>
-              <h4 className="title1"> Brito</h4>
-              <SectionTitle title="Habilidades Profissionais" />
-
-              <div className="imgbar1">
-                <DeveloperStack />
-
-                {/* <img className="imgbar1" src={imgbar} alt="imgbar" /> */}
-              </div>
-            </div>
-          </Carousel.Item>
-
-          <Carousel.Item interval={null}>
-            <div className=" fist-item">
-              <div className="bg1">
-                <h4 className="title">Patriky</h4>
-                <h4 className="title1"> Brito</h4>
-              </div>
-              <SectionTitle title="Idiomas" />
-
-              <div className="portugues">
-                <h5> Português</h5>
-              </div>
-              <div className="bar1">
-                <img src={bar1} className="bar1" alt="bar1" />
-              </div>
-              <div className="espanhol">
-                <h5> Espanhol </h5>
-              </div>
-              <div className="bar2">
-                <img className="bar2" src={bar1} alt="bar1" />
-              </div>
-              <div className="ingles">
-                <h5> Inglês</h5>
-              </div>
-              <div className="bar3">
-                <img className="bar3" src={bar3} alt="bar1" />
-              </div>
-              <div className="formacao">
-                <h3> Formação Acadêmica</h3>
-              </div>
-              <div className="exp">
-                <h5 className="exp">
-                  Especialista em Engenharia de Software (Faculdade Descomplica), graduado
-                  em Redes de Computadores. Técnico em Informática pelo Instituto Federal
-                  de Ciência e Tecnologia da Paraíba (IFPB)
-                </h5>
-              </div>
-              <div className="formacao1">
-                <h3>Experiência profissional</h3>
-              </div>
-              <div className="exp1">
-                <h5 className="exp1">
-                  Especialista em análise de dados no Instituto Brasileiro de
-                  Geografia e Estatistica - IBGE Desenvolvedor Front-end, LANE
-                  ART DESIGN Docente em Programação de sistemas, E.N.E. Jose de
-                  Paiva Gadelha
-                </h5>
-              </div>
-            </div>
-          </Carousel.Item>
-
-          <Carousel.Item interval={null}>
-            <div className=" fist-item">
-              <div className="bg1">
-                <h4 className="title">Patriky</h4>
-                <h4 className="title1"> Brito</h4>
-              </div>
-              <SectionTitle title="Projetos" />
-              <div className="projects">
-                <ProjectsCarousel />
-              </div>
-            </div>
-          </Carousel.Item>
-        </Carousel>
-      </section>
-    </div>
+      <Hero />
+      <About />
+      <Skills />
+      <Journey />
+      <Projects />
+    </>
   );
 }
