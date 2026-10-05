@@ -1,0 +1,114 @@
+.site-footer {
+  padding-top: var(--section-pad);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-line);
+}
+
+.site-footer__main {
+  display: grid;
+  gap: var(--space-7);
+  padding-bottom: var(--section-pad);
+}
+
+.site-footer__main > * {
+  min-width: 0; /* permite que o e-mail longo encolha em telas estreitas */
+}
+
+.site-footer__lead {
+  margin-top: var(--space-4);
+  max-width: 34ch;
+  color: var(--color-text-muted);
+  font-size: var(--fs-md);
+}
+
+.site-footer__channels {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+}
+
+/* O e-mail é a chamada principal do rodapé */
+.site-footer__email {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 6.4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: break-word;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.site-footer__email:hover {
+  color: var(--color-accent);
+}
+
+.copy-email {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.copy-email__status:empty {
+  display: none;
+}
+
+.site-footer__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  color: var(--color-text);
+  font-size: var(--fs-md);
+  text-decoration: none;
+}
+
+.site-footer__phone .icon {
+  color: var(--color-accent);
+}
+
+.site-footer__phone:hover {
+  color: var(--color-accent);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  padding-block: var(--space-5) calc(var(--space-5) + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--color-line);
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.visitor-counter:hover {
+  color: var(--color-text);
+}
+
+.visitor-counter img {
+  height: 1.25rem;
+  width: auto;
+}
+
+@media (min-width: 900px) {
+  .site-footer__main {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .site-footer__email {
+    font-size: min(2.75rem, 3.3vw); /* cabe inteiro na meia coluna */
+  }
+}

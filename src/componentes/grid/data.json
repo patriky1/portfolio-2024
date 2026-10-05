@@ -1,7 +1,70 @@
-{ 
-    "userPortfolio": "E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br> ©",
-    "about": "Sobre mim",
-    "sobre": "Meu nome é Patriky Brito, tenho 26 anos e sou Desenvolvedor Front-end. Desde 2019, atuo como programador autodidata, sempre com uma visão estratégica e foco em adaptabilidade. Sou graduado em Redes de Computadores e especializado em Engenharia de Software. Além de desenvolver soluções criativas, também formo novos profissionais ágeis, orientando talentos em início de carreira no mundo da programação. Fora do universo digital, dedico meu tempo livre a experiências que enriquecem minha visão criativa e pessoal. Aprecio cachaças artesanais, gosto de experimentar novas receitas, viajar e fazer caminhadas. Essas atividades refletem meu compromisso com o crescimento contínuo, tanto pessoal quanto profissional.",
-    "nome": "Patriky",
-    "sobrenome": "Brito"
+{
+  "userPortfolio": "E patrikybrito@gmail.com <br></br> T +55 83 9697-9777 <br></br> ©",
+  "about": "Sobre mim",
+  "sobre": "Meu nome é Patriky Brito, tenho 26 anos e sou Desenvolvedor Front-end. Desde 2019, atuo como programador autodidata, sempre com uma visão estratégica e foco em adaptabilidade. Sou graduado em Redes de Computadores e especializado em Engenharia de Software.\n\nAlém de desenvolver soluções criativas, também formo novos profissionais ágeis, orientando talentos em início de carreira no mundo da programação.\n\nFora do universo digital, dedico meu tempo livre a experiências que enriquecem minha visão criativa e pessoal. Aprecio cachaças artesanais, gosto de experimentar novas receitas, viajar e fazer caminhadas. Essas atividades refletem meu compromisso com o crescimento contínuo, tanto pessoal quanto profissional.",
+  "nome": "Patriky",
+  "sobrenome": "Brito",
+  "cargo": "Desenvolvedor Front-end",
+  "chamada": "Ajudando negócios e organizações a crescer.",
+  "contato": {
+    "email": "patrikybrito@gmail.com",
+    "telefone": "+55 83 9697-9777",
+    "telefoneLink": "+558396979777",
+    "linkedin": "https://www.linkedin.com/in/patriky-brito/",
+    "instagram": "https://www.instagram.com/patrikyb_dev/",
+    "github": "https://github.com/patriky1"
+  },
+  "contador": {
+    "link": "https://contador.s12.com.br",
+    "imagem": "https://contador.s12.com.br/img-Z9x228cy9x7666z9-14.gif"
+  },
+  "habilidades": [
+    { "label": "WordPress", "value": 90 },
+    { "label": "PHP", "value": 68 },
+    { "label": "JavaScript", "value": 90 },
+    { "label": "React JS", "value": 80 },
+    { "label": "React Native", "value": 75 },
+    { "label": "Python", "value": 95 }
+  ],
+  "idiomas": [
+    { "idioma": "Português", "nivel": 5 },
+    { "idioma": "Espanhol", "nivel": 5 },
+    { "idioma": "Inglês", "nivel": 4 }
+  ],
+  "experiencia": [
+    {
+      "cargo": "Especialista em análise de dados",
+      "local": "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    },
+    { "cargo": "Desenvolvedor Front-end", "local": "LANE ART DESIGN" },
+    {
+      "cargo": "Docente em Programação de Sistemas",
+      "local": "E.N.E. José de Paiva Gadelha"
+    }
+  ],
+  "formacao": [
+    {
+      "curso": "Especialização em Engenharia de Software",
+      "local": "Faculdade Descomplica"
+    },
+    { "curso": "Graduação em Redes de Computadores", "local": "" },
+    {
+      "curso": "Técnico em Informática",
+      "local": "Instituto Federal de Ciência e Tecnologia da Paraíba (IFPB)"
+    }
+  ],
+  "projetos": [
+    { "id": "img1", "titulo": "Delivery de sushi", "tipo": "App mobile" },
+    { "id": "img2", "titulo": "CUJO", "tipo": "App mobile" },
+    { "id": "img3", "titulo": "Fine dining", "tipo": "App mobile" },
+    { "id": "img4", "titulo": "App de meditação, tema dia", "tipo": "App mobile" },
+    { "id": "img5", "titulo": "App de meditação, tema noite", "tipo": "App mobile" },
+    { "id": "img6", "titulo": "Shake-me", "tipo": "App mobile" },
+    { "id": "img7", "titulo": "Datas comemorativas", "tipo": "App mobile" },
+    { "id": "img8", "titulo": "Deliciosos Sabores", "tipo": "App mobile" },
+    { "id": "img11", "titulo": "YourPro", "tipo": "Dashboard web" },
+    { "id": "img13", "titulo": "All For Paws", "tipo": "Landing page" },
+    { "id": "img14", "titulo": "FlexQuest", "tipo": "Landing page" },
+    { "id": "img9", "titulo": "Coletânea de projetos", "tipo": "Visão geral", "somenteDesktop": true }
+  ]
 }

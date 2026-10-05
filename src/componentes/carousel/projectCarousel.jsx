@@ -1,78 +1,282 @@
-import { useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import img1 from "./img-celular/img1.png";
-import img2 from "./img-celular/img2.png";
-import img3 from "./img-celular/img3.png";
-import img4 from "./img-celular/img4.png";
-import img5 from "./img-celular/img5.png";
-import img6 from "./img-celular/img6.png";
-import img7 from "./img-celular/img7.png";
-import img8 from "./img-celular/img8.png";
-import img9 from "./img-celular/img9.png";
-import img11 from "./img-celular/img11.png";
-import img13 from "./img-celular/img13.jpg";
-import img14 from "./img-celular/img14.png";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import data from "../grid/data.json";
+import projectImages from "./assets";
+import Icon from "../ui/Icon";
+import { useInView, useMediaQuery, usePrefersReducedMotion } from "../ui/hooks";
+import "./carousel.css";
 
-import { useEffect } from "react";
+const AUTOPLAY_MS = 4500;
+const SWIPE_PX = 40;
 
-const showDesktopImage = window?.screen.width <= 680;
-const noMobileValue = {
-  source: img9,
-  class: "source-img--large d-block w-100 h-desktop-image mt-5",
+const sizesFor = (formato) =>
+  formato === "retrato"
+    ? "(min-width: 768px) 320px, 50vw"
+    : "(min-width: 1280px) 1100px, 92vw";
 
-};
+const srcSetFor = (image) => `${image.sm} ${image.smW}w, ${image.lg} ${image.lgW}w`;
 
+/**
+ * Galeria de projetos.
+ * Mantém o comportamento do carrossel original (avanço automático e a
+ * imagem panorâmica exibida apenas em telas acima de 680px), adicionando
+ * miniaturas, legenda, swipe, teclado, pausa e estados de carregamento/erro.
+ */
 const ProjectsCarousel = () => {
-  const [interval, setInterval] = useState(2000);
-  const [renderData, setRenderData] = useState([]);
+  const isDesktop = useMediaQuery("(min-width: 681px)");
+  const reducedMotion = usePrefersReducedMotion();
+  const [viewRef, inView] = useInView({ once: false, threshold: 0.35, rootMargin: "0px" });
+
+  const items = useMemo(
+    () =>
+      data.projetos
+        .filter((item) => projectImages[item.id] && (isDesktop || !item.somenteDesktop))
+        .map((item) => ({ ...item, image: projectImages[item.id] })),
+    [isDesktop]
+  );
+
+  const [index, setIndex] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [imageState, setImageState] = useState({}); // { [id]: "loaded" | "error" }
+  const [attempt, setAttempt] = useState(0);
+  const thumbsRef = useRef(null);
+  const pointerStart = useRef(null);
+
+  const count = items.length;
+  const current = count ? items[Math.min(index, count - 1)] : null;
+  const activeIndex = current ? items.indexOf(current) : 0;
+  const status = current ? imageState[current.id] || "loading" : "loading";
 
   useEffect(() => {
-    const data = [
-      { source: img1, class: "source-img d-block w-100 h-100" },
-      { source: img2, class: "source-img d-block w-100 h-100" },
-      { source: img3, class: "source-img d-block w-100 h-100" },
-      { source: img4, class: "source-img d-block w-100 h-100" },
-      { source: img5, class: "source-img d-block w-100 h-100" },
-      { source: img6, class: "source-img d-block w-100 h-100" },
-      { source: img7, class: "source-img d-block w-100 h-100" },
-      { source: img8, class: "source-img d-block w-100 h-100" },
-      { source: img11, class: "source-img d-block w-100 h-140" },
-      { source: img13, class: "source-img d-block w-100 h-150" },
- 
-      { source: img14, class: "source-img d-block w-100 h-100" },
-      // { source: img10, class: "source-img d-block w-50 h-100" },
+    if (reducedMotion) setPlaying(false);
+  }, [reducedMotion]);
 
-    ];
+  const goTo = useCallback(
+    (target) => {
+      if (!count) return;
+      setIndex(((target % count) + count) % count);
+    },
+    [count]
+  );
+  const next = useCallback(() => goTo(activeIndex + 1), [goTo, activeIndex]);
+  const prev = useCallback(() => goTo(activeIndex - 1), [goTo, activeIndex]);
 
-    setRenderData(showDesktopImage ? data : [...data, noMobileValue]);
-  }, []);
+  // Avanço automático: só com a galeria visível, sem interação e imagem pronta.
+  const autoplay =
+    playing && !hovered && !focused && inView && count > 1 && status === "loaded";
 
-  const handleSelect = () => {
-    setInterval(3000);
+  useEffect(() => {
+    if (!autoplay) return undefined;
+    const timer = setTimeout(() => setIndex((i) => (i + 1) % count), AUTOPLAY_MS);
+    return () => clearTimeout(timer);
+  }, [autoplay, activeIndex, count]);
+
+  // Mantém a miniatura ativa visível sem rolar a página.
+  useEffect(() => {
+    const strip = thumbsRef.current;
+    const thumb = strip && strip.children[activeIndex];
+    if (!thumb || !strip.scrollTo) return;
+    const left = thumb.offsetLeft - (strip.clientWidth - thumb.clientWidth) / 2;
+    strip.scrollTo({ left, behavior: reducedMotion ? "auto" : "smooth" });
+  }, [activeIndex, reducedMotion]);
+
+  // Pré-carrega a próxima imagem assim que a atual termina de carregar.
+  useEffect(() => {
+    if (status !== "loaded" || count < 2) return;
+    const upcoming = items[(activeIndex + 1) % count].image;
+    const img = new Image();
+    img.sizes = sizesFor(upcoming.formato);
+    img.srcset = srcSetFor(upcoming);
+    img.src = upcoming.sm;
+  }, [status, activeIndex, items, count]);
+
+  const markImage = (id, value) =>
+    setImageState((state) => ({ ...state, [id]: value }));
+
+  const retry = () => {
+    if (!current) return;
+    setImageState((state) => {
+      const copy = { ...state };
+      delete copy[current.id];
+      return copy;
+    });
+    setAttempt((value) => value + 1);
   };
 
+  const onKeyDown = (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      next();
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      prev();
+    }
+  };
+
+  const onPointerDown = (event) => {
+    if (event.pointerType === "mouse") return;
+    pointerStart.current = { x: event.clientX, y: event.clientY };
+  };
+
+  const onPointerUp = (event) => {
+    const start = pointerStart.current;
+    pointerStart.current = null;
+    if (!start) return;
+    const dx = event.clientX - start.x;
+    const dy = event.clientY - start.y;
+    if (Math.abs(dx) < SWIPE_PX || Math.abs(dx) < Math.abs(dy)) return;
+    if (dx < 0) next();
+    else prev();
+  };
+
+  if (!current) {
+    return (
+      <div className="gallery gallery--empty">
+        <p>Nenhum projeto para exibir no momento.</p>
+      </div>
+    );
+  }
+
+  const { image } = current;
+
   return (
-    <Carousel indicators={false} onSelect={handleSelect}>
-      {renderData.map((image, index) => (
-        <Carousel.Item key={index} interval={interval}>
-          {image.class === renderData[10]?.class ? (
-            <div className={`last-${index}`}>
-              <img
-                className={image.class}
-                src={image.source}
-                alt={`Slide-${index}`}
-              />
-            </div>
-          ) : (
+    <div
+      ref={viewRef}
+      className="gallery"
+      role="region"
+      aria-roledescription="carrossel"
+      aria-label="Galeria de projetos"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setFocused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+      }}
+      onKeyDown={onKeyDown}
+    >
+      <div
+        className="gallery__stage"
+        data-format={image.formato}
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={() => {
+          pointerStart.current = null;
+        }}
+      >
+        <div
+          key={`${current.id}-${attempt}`}
+          className="gallery__slide"
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`${activeIndex + 1} de ${count}`}
+        >
+          {status !== "error" ? (
             <img
-              className={image.class}
-              src={image.source}
-              alt={`Slide-${index}`}
+              className={`gallery__image${status === "loaded" ? " is-loaded" : ""}`}
+              src={image.lg}
+              srcSet={srcSetFor(image)}
+              sizes={sizesFor(image.formato)}
+              width={image.width}
+              height={image.height}
+              alt={`${current.titulo}, ${current.tipo.toLowerCase()}`}
+              decoding="async"
+              draggable="false"
+              onLoad={() => markImage(current.id, "loaded")}
+              onError={() => markImage(current.id, "error")}
             />
-          )}
-        </Carousel.Item>
-      ))}
-    </Carousel>
+          ) : null}
+
+          {status === "loading" ? (
+            <div className="gallery__loading" aria-hidden="true">
+              <span className="gallery__spinner" />
+            </div>
+          ) : null}
+
+          {status === "error" ? (
+            <div className="gallery__error" role="alert">
+              <Icon name="alert" className="icon gallery__error-icon" />
+              <p>Não foi possível carregar a imagem de {current.titulo}.</p>
+              <button type="button" className="btn btn--ghost btn--sm" onClick={retry}>
+                <Icon name="refresh" />
+                Tentar novamente
+              </button>
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="gallery__bar">
+        <div
+          className="gallery__caption"
+          aria-live={autoplay ? "off" : "polite"}
+          aria-atomic="true"
+        >
+          <h3 className="gallery__title">{current.titulo}</h3>
+          <p className="gallery__meta">
+            {current.tipo}
+            <span className="gallery__count">
+              {activeIndex + 1} de {count}
+            </span>
+          </p>
+        </div>
+
+        <div className="gallery__controls">
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={() => setPlaying((value) => !value)}
+            aria-label={playing ? "Pausar troca automática" : "Retomar troca automática"}
+            title={playing ? "Pausar" : "Retomar"}
+          >
+            <Icon name={playing ? "pause" : "play"} />
+          </button>
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={prev}
+            aria-label="Projeto anterior"
+            title="Anterior"
+          >
+            <Icon name="chevronLeft" />
+          </button>
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={next}
+            aria-label="Próximo projeto"
+            title="Próximo"
+          >
+            <Icon name="chevronRight" />
+          </button>
+        </div>
+      </div>
+
+      <ul ref={thumbsRef} className="gallery__thumbs" aria-label="Escolher projeto">
+        {items.map((item, i) => (
+          <li key={item.id}>
+            <button
+              type="button"
+              className="gallery__thumb"
+              data-format={item.image.formato}
+              aria-label={`Ver ${item.titulo}`}
+              aria-current={i === activeIndex ? "true" : undefined}
+              onClick={() => goTo(i)}
+            >
+              <img
+                src={item.image.sm}
+                alt=""
+                width={item.image.smW}
+                height={Math.round((item.image.height / item.image.width) * item.image.smW)}
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
